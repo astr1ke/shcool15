@@ -11,7 +11,7 @@
     </div>
 
     <div class="map">
-        <div id="google-map" data-latitude="40.713732" data-longitude="-74.0092704"></div>
+        <div id="google-map" data-latitude="44.848885" data-longitude="41.329495"></div>
     </div>
 
     <section id="contact-page">
@@ -51,5 +51,7 @@
         <!--/.container-->
     </section>
     <!--/#contact-page-->
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3252.2041029395373!2d41.32937217359657!3d44.84917508172796!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f9c5d18ffe0627%3A0x91834f94af1f3938!2z0KjQutC-0LvQsCAxNQ!5e1!3m2!1sru!2sru!4v1525903502434" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 @endsection

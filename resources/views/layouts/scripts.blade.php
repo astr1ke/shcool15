@@ -6,7 +6,7 @@
 <script src="{{asset('js/jquery.isotope.min.js')}}"></script>
 <script src="{{asset('js/wow.min.js')}}"></script>
 <script src="{{asset('js/functions.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo77G7S7s_IsNMwDwricUZ1fKi8bp0Gfo">
 </script>
 <script src="{{asset('contactform/contactform.js')}}"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>

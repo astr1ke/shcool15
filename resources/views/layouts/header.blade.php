@@ -10,7 +10,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand">
-                        <a href="/"><h1><span>Com</span>pany</h1></a>
+                        <a href="/"><h1><span>Шко</span>ла №15</h1></a>
                     </div>
                 </div>
 
@@ -19,10 +19,10 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation"><a href="/" @if($_SERVER['REQUEST_URI'] == '/') class="active"@endif>Главная</a></li>
                             <li role="presentation"><a href="/about" @if($_SERVER['REQUEST_URI'] == '/about') class="active"@endif>О нас</a></li>
-                            <li role="presentation"><a href="/learner" @if($_SERVER['REQUEST_URI'] == '/learner') class="active"@endif>Учителям</a></li>
-                            <li role="presentation"><a href="/gallery" @if($_SERVER['REQUEST_URI'] == '/gallery') class="active"@endif>Фотогалерея</a></li>
                             <li role="presentation"><a href="/news/1" @if(substr($_SERVER['REQUEST_URI'],0,6) == '/news/' or
-                                                                      substr($_SERVER['REQUEST_URI'],0,6) == '/artic' ) class="active"@endif>Статьи</a></li>
+                                                                      substr($_SERVER['REQUEST_URI'],0,6) == '/artic' ) class="active"@endif>Жизнь школы</a></li>
+                            <li role="presentation"><a href="/gallery" @if($_SERVER['REQUEST_URI'] == '/gallery') class="active"@endif>Наша Галерея</a></li>
+                            <li role="presentation"><a href="/learner" @if($_SERVER['REQUEST_URI'] == '/learner') class="active"@endif>Учителям</a></li>
                             <li role="presentation"><a href="/contacts" @if($_SERVER['REQUEST_URI'] == '/contacts') class="active"@endif>Контакты</a></li>
                             @if (!(Auth::check()))
                             <li role="presentation"><a href="/login">Войти</a></li>
