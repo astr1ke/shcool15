@@ -18,6 +18,10 @@ Route::get('about', function (){
     return view('about');
 });
 
+Route::get('statia', function (){
+    return view('statia');
+});
+
 Route::get('gallery', function (){
     return view('gallery');
 });

@@ -1,6 +1,7 @@
 @extends('layouts.layouts')
 @section('content')
 
+
 <div class="wrapper">
 
     @if (count($errors) > 0)
@@ -41,20 +42,45 @@
                 @endforeach
             </select>
         </p>
+
         <p class="area">
             <label>Текст статьи:</label>
-            <textarea class="textarea" name="text"></textarea>
+            <textarea class="text" name="text" id="text"></textarea>
         </p>
         <p>
-        <label>Выберите файл</label>
-        <input id="img" type="file"  name="file">
+            <label>Выберите файл</label>
+            <input id="img" type="file"  name="file">
         </p>
         <p>
             <label>&nbsp;</label>
             <input type="submit" class="btn" value="Отправить" />
         </p>
+
         <input type="hidden" name = "user" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" />
+
     </form>
+
+        <!-- подключаем jquery -->
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+        <!-- подключаем bootstrap.js -->
+
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+        <!-- подключаем сам summernote -->
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.7/summernote.js"></script>
+
+        <script>
+
+            $(document).ready(function() {
+
+                $('#text').summernote();
+
+            });
+
+        </script>
 </div>
 @endsection
 
