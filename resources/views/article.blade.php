@@ -59,7 +59,7 @@
     @endif
     <form id="form" class="blocks" action="/article" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
-        <p><h3>Создание статьи<br/><br/></h3></p>
+        <p><h3 id="ca">Создание статьи<br/><br/></h3></p>
         <p>
             <label>Заголовок:</label>
             <input type="text" class="text" name="articleName" />
@@ -78,6 +78,7 @@
                 @endforeach
             </select>
         </p>
+        <br/>
         <p class="area">
             <textarea class="text" name="text" id="text"></textarea>
         </p>
