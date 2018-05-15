@@ -10,7 +10,7 @@ font-size: 12px;
 .wrapper {
 margin:80px auto 0;
 margin-bottom: 134px;
-margin-top: 50px;
+margin-top: 150px;
 width:1000px;
 }
 
@@ -108,8 +108,26 @@ a img {
 border:none;
 }
 
-}
+
+
 html,
 body {
     height: 100%;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+
+
+}
+
+footer {
+    flex: 0 0 auto;
+
+
+}
