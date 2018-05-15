@@ -81,14 +81,16 @@
         <p class="area">
             <textarea class="text" name="text" id="text"></textarea>
         </p>
-        <p>
-            <label id="lp">Фото на заголовок:</label>
-            <input id="img" type="file"  name="file">
-        </p>
-        <p>
-            <label id="lp1">Описание фото:</label>
-            <input type="text" class="text" name="description" />
-        </p>
+        <div>
+            <p>
+                <label id="lp">Фото на заголовок:</label>
+                <input id="img" type="file"  name="file">
+            </p>
+            <p>
+                <label id="lp1">Описание фото:</label>
+                <input type="text" class="text" name="description" />
+            </p>
+        </div>
         <p>
             <label>&nbsp;</label>
             <input type="submit" class="btn" value="Отправить" />

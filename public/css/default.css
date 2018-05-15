@@ -74,10 +74,12 @@ color:#666;
 #lp{
     margin-top:-9px;
     width:130px;
+
 }
 
 #lp1{
     width:130px;
+
 }
 
 /* CSS3 */
@@ -101,4 +103,9 @@ color: #CCCCCC;
 a img {
 border:none;
 }
+
+}
+html,
+body {
+    height: 100%;
 
