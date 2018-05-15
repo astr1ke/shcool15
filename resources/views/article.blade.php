@@ -11,10 +11,8 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
     <!-- подключаем стили Summernote -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.7/summernote.css" rel="stylesheet">
-
     <link href="{{asset('css/style.css')}}" rel="stylesheet" />
     <link href="{{asset('css/default.css')}}" rel="stylesheet" type="text/css" />
-
 </head>
 
 <header>
