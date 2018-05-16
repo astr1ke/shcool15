@@ -93,7 +93,7 @@
         @foreach($articles as $article)
         <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <a href="/articleNews/{{$article['id']}}?"><img  src="{{$article['pictures']}}" class="img-responsive" />
-            <h3>{{$article['description']}}</h3>
+            <h3>{{$article['articleName']}}</h3>
             <p>{{$article['text']}}
             </p></a>
         </div>

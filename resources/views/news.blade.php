@@ -1,6 +1,32 @@
-@extends('layouts.layouts')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Company-HTML Bootstrap theme</title>
+
+    <-Подключаем стили Бутстрап->
+    @include('layouts.stiles')
+
+<!--Выбираем цвет фона сообщений и отступы поля-->
+    <style type="text/css">
+        .art {
+            background: whitesmoke;
+            border-radius: 11px;
+        }
+        .pict {
+            margin-right: 10px;
+        }
+        .txt {
+            margin-right: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
     <div id="breadcrumb">
         <div class="container">
             <div class="breadcrumb">
@@ -19,35 +45,40 @@
                 <div class="col-md-8">
 
                     @foreach($news as $n)
-                    <div class="blog-item">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-2">
-                                <div class="entry-meta">
-                                    <span id="publish_date">{{$n['created_at']}}</span>
-                                    <span><i class="fa fa-user"></i> <a href="#">{{$n['user']}}</a></span>
-                                    <span><i class="fa fa-comment"></i> <a href="#">2 Comments</a></span>
-                                    <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>
+                        <div class="art">
+                            <div class="blog-item">
+                                <div class="row">
+
+                                    <div class="col-xs-12 col-sm-2">
+                                        <div class="entry-meta">
+                                            <span id="publish_date">{{$n['created_at']}}</span>
+                                            <span><i class="fa fa-user"></i> <a href="#">{{$n['user']}}</a></span>
+                                            <span><i class="fa fa-comment"></i> <a href="#">2 Comments</a></span>
+                                            <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-10 blog-content">
+                                        <h4>{{$n['articleName']}}</h4>
+                                        <div class="pict">
+                                            <a href="{{$n['pictures']}}" ><img class="img-responsive img-blog" src="{{$n['pictures']}}" width="100%" alt="" /></a>
+                                        </div>
+
+                                        <div class="txt">
+                                            <?$txt=mb_strimwidth($n['text'],0,300,'...');?> <!---  обрезаем колво символов для превью статей на главной --->
+                                            <p>{!!$txt!!}</p>
+                                        </div>
+
+                                        <form action="/articleNews/{{$n['id']}}" >
+                                         <button class="btn btn-primary readmore value="Читать далее">Читать далее  <i class="fa fa-angle-right"></i></button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="col-xs-12 col-sm-10 blog-content">
-                                <a href="{{$n['pictures']}}"><img class="img-responsive img-blog" src="{{$n['pictures']}}" width="100%" alt="" /></a>
-                                <h4>{{$n['description']}}</h4>
-                                <p>{{$n['text']}}</p>
-
-                                <form action="/articleNews/{{$n['id']}}" >
-                                 <button class="btn btn-primary readmore value="Читать далее">Читать далее  <i class="fa fa-angle-right"></i></button>
-                                </form>
-
-                            </div>
                         </div>
-                    </div>
-
                     @endforeach
+
                     <!--/.blog-item-->
-
-
-
                     <ul class="pagination pagination-lg">
                         @if($id>1)
                             <li><a href="{{($id-1)}}"><i class="fa fa-long-arrow-left"></i>Предыдущая страница</a></li>
@@ -173,4 +204,13 @@
     </section>
     <!--/#blog-->
 
-@endsection
+    @include('layouts.header')
+
+    @yield('content');
+
+    @include('layouts.footer')
+    @include('layouts.scripts')
+
+</body>
+
+</html>

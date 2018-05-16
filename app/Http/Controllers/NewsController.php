@@ -33,6 +33,6 @@ class NewsController extends Controller
             $isAdmin = False;
         $cat = categorie::all();
 
-        return view('ArticleNews',['news'=>$news,'st'=>1,'id'=>$id,'isAdmin'=>$isAdmin,'categories'=>$cat]);
+        return view('newsView',['news'=>$news,'st'=>1,'id'=>$id,'isAdmin'=>$isAdmin,'categories'=>$cat]);
     }
 }

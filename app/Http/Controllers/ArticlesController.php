@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\categorie;
+
+
+
 
 
 class ArticlesController extends Controller
@@ -14,18 +18,19 @@ class ArticlesController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+
+    public function editor()
     {
         $categorieSelect = categorie::all();
-        return view('article',['categorieSelect' =>$categorieSelect]);
+        return view('newsCreate',['categorieSelect' =>$categorieSelect]);
     }
     public function store(Request $request)
     {
         $this->validate($request, [
-            'articleName' =>'required|min:5|max:20',
-            'description' =>'max:100',
+            'articleName' =>'required|min:5|max:50',
+            'description' =>'max:200',
             'categorie' =>'required|min:3|max:20',
-            'text' =>'required|min:3|max:2000'
+            'text' =>'required|min:20'
         ]);
 
 //        $fileMass = [];
@@ -50,12 +55,11 @@ class ArticlesController extends Controller
         $request->user()->articles()->create([
             'user' => $request->user,
             'articleName' => $request->articleName,
-            'description' => $request->description,
             'categorie' => $request->categorie,
             'text' => $request->text,
             'pictures' => $ff,
-
         ]);
+
 
         return redirect('/news/1');
 

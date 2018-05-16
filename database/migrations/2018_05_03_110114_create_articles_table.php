@@ -18,7 +18,6 @@ class CreateArticlesTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->string('categorie')->string(30);
             $table->string('articleName')->string(20);
-            $table->text('description')->string(100);
             $table->text('text');
             $table->string('user');
             $table->string('pictures')->default('');
