@@ -49,8 +49,8 @@ class ArticlesController extends Controller
             $article->pictures = '';
         }elseif($request->file){
             $rnd = rand(100,200);
-            $file = public_path().'\\uploads\\'.rand(100,200).$_FILES['file']['name'];
-            $ff = '\\uploads\\'.rand(100,200).$_FILES['file']['name'];
+            $file = public_path().'\\uploads\\'.$rnd.$_FILES['file']['name'];
+            $ff = '\\uploads\\'.$rnd.$_FILES['file']['name'];
             $tmp_name = $_FILES["file"]["tmp_name"];
             move_uploaded_file($tmp_name, $file);
             $article->pictures =  $ff;
