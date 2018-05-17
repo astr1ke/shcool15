@@ -37,9 +37,12 @@ Route::get('learner', function (){
 
 Route::get('articleNews/{id}', 'NewsController@view');
 Route::get('news/{id}', 'NewsController@index');
+Route::delete('articleDelete/{id}', 'NewsController@delete');
 Route::get('articles', 'ArticlesController@editor');
 Route::post('article', 'ArticlesController@store');
 Route::delete('article/{article}', 'ArticlesController@destroy');
+Route::get('articleEdit/article/{id}','ArticlesController@edit');
+Route::post('articleEditRequest','ArticlesController@editStore');
 
 
 

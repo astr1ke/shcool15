@@ -24,6 +24,13 @@ class NewsController extends Controller
         return view('newsAll',['news'=>$news,'st'=>$st,'id'=>$id,'isAdmin'=>$isAdmin,'categories'=>$cat]);
     }
 
+    public function delete ($id){
+
+        article::where('id',$id)->delete();
+        return redirect('/news/1');
+
+    }
+
     public function view($id){
         $news = article::where('id', $id)->get();
 

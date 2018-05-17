@@ -72,6 +72,21 @@
                                         <form action="/articleNews/{{$n['id']}}" >
                                          <button class="btn btn-primary readmore value="Читать далее">Читать далее  <i class="fa fa-angle-right"></i></button>
                                         </form>
+                                        @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                        <form action="/articleDelete/{{$n['id']}}" method="post" >
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <button style="margin-left: 15px" class="btn btn-primary readmore value="Удалить статью">Удалить статью  </i></button>
+                                        </form>
+                                        @endif
+
+                                        @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                            <form action="/articleEdit/article/{{$n['id']}}"  >
+                                                  <button style="margin-left: 15px" class="btn btn-primary readmore value="Редактировать статью">Редактировать статью  </i></button>
+                                            </form>
+                                        @endif
+
+
                                     </div>
                                 </div>
                             </div>

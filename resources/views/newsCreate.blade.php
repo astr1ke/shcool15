@@ -121,12 +121,8 @@
                     </p>
                     <div class="fld">
                         <p>
-                            <label id="lp">Фото на заголовок:</label>
+                            <label id="lp">Фото для заголовка:</label>
                             <input id="img" type="file"  name="file">
-                        </p>
-                        <p>
-                            <label id="lp1">Описание фото:</label>
-                            <input type="text" class="text" name="description" />
                         </p>
                         <script>
                             CKEDITOR.replace('text')
@@ -134,7 +130,7 @@
                     </div>
                     <p>
                         <label>&nbsp;</label>
-                        <input type="submit" class="btn" value="Отправить" />
+                        <input type="submit" class="btn" value="Опубликовать" />
                     </p>
                     <input type="hidden" name = "user" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" />
                 </form>
