@@ -27,6 +27,7 @@ class NewsController extends Controller
     public function view($id){
         $news = article::where('id', $id)->get();
 
+
         if (Auth::check() and Auth::user()->IsAdmin ){
             $isAdmin = True;}
         else                                             //узнаем есть ли право у пользователя работать со статьями

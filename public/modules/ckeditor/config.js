@@ -7,10 +7,10 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
-	config.filebrowserBrowseUrl = 'http://shcool/modules/kcfinder/browse.php?opener=ckeditor&type=files';
-    config.filebrowserImageBrowseUrl = 'http://shcool/modules/kcfinder/browse.php?opener=ckeditor&type=images';
-    config.filebrowserFlashBrowseUrl = 'http://shcool/modules/kcfinder/browse.php?opener=ckeditor&type=flash';
-    config.filebrowserUploadUrl = 'http://shcool/modules/kcfinder/upload.php?opener=ckeditor&type=files';
-    config.filebrowserImageUploadUrl = 'http://shcool/modules/kcfinder/upload.php?opener=ckeditor&type=images';
-    config.filebrowserFlashUploadUrl = 'http://shcool/modules/kcfinder/upload.php?opener=ckeditor&type=flash';
+	config.filebrowserBrowseUrl = 'shcool:8888/modules/kcfinder/browse.php?opener=ckeditor&type=files';
+    config.filebrowserImageBrowseUrl = 'shcool:8888/modules/kcfinder/browse.php?opener=ckeditor&type=images';
+    config.filebrowserFlashBrowseUrl = 'shcool:8888/modules/kcfinder/browse.php?opener=ckeditor&type=flash';
+    config.filebrowserUploadUrl = 'shcool:8888/modules/kcfinder/upload.php?opener=ckeditor&type=files';
+    config.filebrowserImageUploadUrl = 'shcool:8888/modules/kcfinder/upload.php?opener=ckeditor&type=images';
+    config.filebrowserFlashUploadUrl = 'shcool:8888/modules/kcfinder/upload.php?opener=ckeditor&type=flash';
 };
