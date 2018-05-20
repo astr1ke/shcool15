@@ -65,7 +65,9 @@
                                         </div>
 
                                         <div class="txt">
-                                            <?$txt=mb_strimwidth($n['text'],0,300,'...');$txt=preg_replace ('/<img.*>/Uis', '', $txt);?> <!---  обрезаем колво символов для превью статей на главной --->
+                                            <?  $txt = preg_replace ('/<img.*>/Uis', '', $n['text']);
+                                                $txt = preg_replace('/\s{2,}/', '', $txt);
+                                                $txt = mb_strimwidth($txt,0,300,'...');?> <!---  обрезаем колво символов для превью статей на главной --->
                                             <p>{!!$txt!!}</p>
                                         </div>
 
