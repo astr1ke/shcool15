@@ -19,7 +19,6 @@ class CreateCommentsTable extends Migration
 			$table->string('email');
 			$table->text('text');
 			$table->integer('parent_id')->nullable(); //разрешаем null;
-            $table->string('article_id');
 			$table->boolean('status')->default(config('comments.show_immediately')); 
             $table->timestamps();
         });

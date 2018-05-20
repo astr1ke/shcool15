@@ -36,6 +36,7 @@ class CommentController extends Controller
 
 
 		if($user) {
+		    $data['id'] = $user->id;
 			$data['name'] = (!empty($data['name'])) ? $data['name'] : $user->name;
 			$data['email'] = (!empty($data['email'])) ? $data['email'] : $user->email;
 		}
