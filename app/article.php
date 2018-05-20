@@ -14,6 +14,12 @@ class article extends Model
 
     public function user(){
         return $this->belongsTo(user::class);
+
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 
 

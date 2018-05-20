@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Company-HTML Bootstrap theme</title>
 
     <-Подключаем стили Бутстрап->
@@ -24,6 +25,9 @@
 </head>
 
 <body>
+
+    @include('layouts.header')
+
     <div id="breadcrumb">
         <div class="container">
             <div class="breadcrumb">
@@ -65,10 +69,13 @@
                                 </div>
                             </div>
                         </div>
-
+                    @include('comments.comments_block', ['essence' => $n])
                 @endforeach
-                <!--/.blog-item-->
 
+
+
+
+                <!--/.blog-item-->
 
 
 
@@ -126,11 +133,6 @@
         </div>
     </section>
     <!--/#blog-->
-
-
-    @include('layouts.header')
-
-    @yield('content');
 
     @include('layouts.footer')
     @include('layouts.scripts')

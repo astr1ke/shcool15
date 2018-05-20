@@ -44,7 +44,8 @@ Route::delete('article/{article}', 'ArticlesController@destroy');
 Route::get('articleEdit/article/{id}','ArticlesController@edit');
 Route::post('articleEditRequest','ArticlesController@editStore');
 
-
+//Роут для комментариев
+Route::post('comment','CommentController@store')->name('comment');
 
 Route::get('logout', function (){
     auth::logout();
