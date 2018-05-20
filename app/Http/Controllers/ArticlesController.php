@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\article;
 use App\image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,14 +23,50 @@ class ArticlesController extends Controller
     public function editor()
     {
         $categorieSelect = categorie::all();
-        return view('newsCreate',['categorieSelect' =>$categorieSelect]);
+        return view('newsCreate',['categorieSelect' => $categorieSelect]);
     }
+
+    public function edit($id){
+
+        $article = article::find($id);
+        $categorieSelect = categorie::all();
+
+        return view('newsEdit', ['article' => $article,'categorieSelect' => $categorieSelect]);
+
+    }
+
+    public function editStore(Request $request){
+
+        $article = article::find($request->articleId);
+        if (!($article)){
+            return abort(404);
+        }
+
+        $article->categorie = $request->categorie;
+        $article->articleName = $request->articleName;
+        $article->text = $request->text;
+        if ($request->chkDel){
+            $article->pictures = '';
+        }elseif($request->file){
+            $rnd = rand(100,200);
+            $file = public_path().'\\uploads\\'.$rnd.$_FILES['file']['name'];
+            $ff = '\\uploads\\'.$rnd.$_FILES['file']['name'];
+            $tmp_name = $_FILES["file"]["tmp_name"];
+            move_uploaded_file($tmp_name, $file);
+            $article->pictures =  $ff;
+        }
+
+        if($article->save()){
+            return redirect('news/1');
+        }
+
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
             'articleName' =>'required|min:5|max:50',
-            'description' =>'max:200',
-            'categorie' =>'required|min:3|max:20',
+            'categorie' =>'required|min:3|max:50',
             'text' =>'required|min:20'
         ]);
 
