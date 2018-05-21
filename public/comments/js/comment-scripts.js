@@ -79,7 +79,7 @@ jQuery(document).ready(function($){
 
                         //Если ошибка
                         } else {
-                             $('.wrap_result').css('color', 'red').append('<br><strong>Ошибка: </strong>' + ('<br>'))
+                             $('.wrap_result').css('color', 'blue').append('<br><strong>Ошибка: </strong>' + html.error.join('<br>'))
                              $('.wrap_result').delay(3000).fadeOut(1000);
                         }
                     },

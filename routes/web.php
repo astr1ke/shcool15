@@ -37,6 +37,7 @@ Route::get('learner', function (){
 
 Route::get('articleNews/{id}', 'NewsController@view');
 Route::get('news/{id}', 'NewsController@index');
+Route::get('news/categories/{cat}/{id}', 'NewsController@categorieView');
 Route::delete('articleDelete/{id}', 'NewsController@delete');
 Route::get('articles', 'ArticlesController@editor');
 Route::post('article', 'ArticlesController@store');

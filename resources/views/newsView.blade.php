@@ -55,19 +55,24 @@
                                             <span id="publish_date">{{$n['created_at']}}</span>
                                             <span><i class="fa fa-user"></i> <a href="#">{{$n['user']}}</a></span>
                                             <span><i class="fa fa-comment"></i> <a href="#">{{count(\App\article::find($n['id'])->comments).' коммент.' }}</a></span>
-                                            <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>
                                         </div>
                                     </div>
 
                                     <div class="col-xs-12 col-sm-10 blog-content">
-
+                                        <div class="pict">
+                                            <a href="{{$n['pictures']}}" ><img class="img-responsive img-blog" src="{{$n['pictures']}}" width="100%" alt="" /></a>
+                                        </div>
                                         <h4>{{$n['articleName']}}</h4>
                                         <div class="txt">
                                             <p>{!!$n['text']!!}</p>
                                         </div>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
                     @include('comments.comments_block', ['essence' => $n])
                 @endforeach
@@ -84,6 +89,13 @@
 
                 <aside class="col-md-4">
 
+                    <!--Поиск-->
+                    <div class="widget search">
+                        <form role="form">
+                            <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                        </form>
+                    </div>
+
                     <div class="widget categories">
                         <h3>Categories</h3>
                         <div class="row">
@@ -97,22 +109,6 @@
                         </div>
                     </div>
                     <!--/.categories-->
-
-                    <div class="widget archieve">
-                        <h3>Archieve</h3>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <ul class="blog_archieve">
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> December 2015 <span class="pull-right">(97)</span></a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> November 2015 <span class="pull-right">(32)</span></a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> October 2015 <span class="pull-right">(19)</span></a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> September 2015 <span class="pull-right">(08)</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.archieve-->
-
 
 
                     <div class="widget blog_gallery">
