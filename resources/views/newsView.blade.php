@@ -10,6 +10,9 @@
 
     <-Подключаем стили Бутстрап->
     @include('layouts.stiles')
+    <!--Стили коментариев-->
+    <link rel="stylesheet" type="text/css" media="all" href="{{asset('comments/css')}}/comments.css" />
+
 
     <style type="text/css">
         .art {
