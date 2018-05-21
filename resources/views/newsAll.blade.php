@@ -53,7 +53,7 @@
                                         <div class="entry-meta">
                                             <span id="publish_date">{{$n['created_at']}}</span>
                                             <span><i class="fa fa-user"></i> <a href="#">{{$n['user']}}</a></span>
-                                            <span><i class="fa fa-comment"></i> <a href="#">2 Comments</a></span>
+                                            <span><i class="fa fa-comment"></i> <a href="#">{{count(\App\article::find($n['id'])->comments) .' коммент.'}}</a></span>
                                             <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>
                                         </div>
                                     </div>
