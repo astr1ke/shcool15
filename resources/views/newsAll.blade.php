@@ -59,7 +59,7 @@
                                         <div class="entry-meta">
                                             <span id="publish_date">{{$n->created_at}}</span>
                                             <span><i class="fa fa-user"></i> <a href="#">{{$n->user}}</a></span>
-                                            <span><i class="fa fa-comment"></i> <a href="#">{{count(\App\article::find($n['id'])->comments) .' коммент.'}}</a></span>
+                                            <span><i class="fa fa-comment"></i> <a href="#">{{count(\App\article::find($n->id)->comments) .' коммент.'}}</a></span>
                                         </div>
                                     </div>
 
@@ -170,7 +170,6 @@
                                         <!--Получение колекции нужных статей -->
                                             <?
                                             $art = \App\article::where('categorie',$categorie->categorie)->get();
-                                            var_dump($art->count());
                                             ?>
                                         <li><a href="<?
                                             if(($art->count())>0) {
