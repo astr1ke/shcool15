@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Company-HTML Bootstrap theme</title>
 
     <-Подключаем стили Бутстрап->
@@ -144,11 +145,13 @@
 
                                     <!-- Вывод на экран названий статей и их комментариев-->
                                     @foreach($cmts as $cmt)
-                                        <div  style="background: whitesmoke; border-radius: 11px; margin-top: 10px; padding: 5px 15px 5px 15px;">
-                                            <img src="images/blog/avatar3.png" alt="" />
-                                            <p><a href="/articleNews/{{$cmt->article->id}}">{{$cmt->text.'  -'. $cmt->article->articleName}}</a></p>
-                                            <div class="entry-meta small muted">
-                                                <span>Отправлено <a href="#">{{$cmt->name}}</a></span>
+                                        <div  style="background: whitesmoke; border-radius: 11px; margin-top: 10px; height: 85px; padding: 5px 15px 5px 15px;">
+                                            <img src="/images/blog/avatar3.png" alt="" />
+                                            <div style="float: bottom; padding: 20px 5px 20px 15px;" >
+                                                <p><a href="/articleNews/{{$cmt->article->id}}">{{mb_strimwidth(($cmt->text),0,60,'...')}}</a></p>
+                                                <div class="entry-meta small muted" style="float: right;">
+                                                    <span>Отправлено <a href="#">{{$cmt->name}}</a></span>
+                                                </div>
                                             </div>
                                         </div>
                                     @endforeach
@@ -165,17 +168,18 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <ul class="blog_category">
-                                    <li><a href="/news/1">Все</a></li>
+                                    <li><a href="/news/1">Все<span class="badge">{{\App\article::all()->count()}}</span></a></li>
                                     @foreach($categories as $categorie)
                                         <!--Получение колекции нужных статей -->
                                             <?
                                             $art = \App\article::where('categorie',$categorie->categorie)->get();
+                                            $count = $art->count();
                                             ?>
                                         <li><a href="<?
                                             if(($art->count())>0) {
                                                 echo("/news/categories/$categorie->categorie/1");
                                             }
-                                            ?>">{{$categorie->categorie}}</a></li>
+                                            ?>">{{$categorie->categorie}}<span class="badge">{{$count}}</span></a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -187,12 +191,15 @@
                     <div class="widget blog_gallery">
                         <h3>Our Gallery</h3>
                         <ul class="sidebar-gallery">
-                            <li><a href="#"><img src="images/blog/gallery1.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery2.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery3.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery4.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery5.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery6.png" alt="" /></a></li>
+                            <? $pict = \App\article::all();
+                            $i=0;
+                            foreach($pict as $p){
+                                $i++;
+                                if (!($i>18)){
+                                    echo ("<li><a href=\"$p->pictures\"><img src=\"$p->pictures\" width=\"105\" height=\"71\" alt=\"\" /></a></li>");
+                                }else break;
+                            }
+                            ?>
                         </ul>
                     </div>
 

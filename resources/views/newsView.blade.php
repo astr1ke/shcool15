@@ -104,8 +104,18 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <ul class="blog_category">
-                                    @foreach($categories as $categorie)
-                                        <li><a href="#">{{$categorie->categorie}}</a></li>
+                                    <li><a href="/news/1">Все<span class="badge">{{\App\article::all()->count()}}</span></a></li>
+                                @foreach($categories as $categorie)
+                                    <!--Получение колекции нужных статей -->
+                                        <?
+                                        $art = \App\article::where('categorie',$categorie->categorie)->get();
+                                        $count = $art->count();
+                                        ?>
+                                        <li><a href="<?
+                                            if(($art->count())>0) {
+                                                echo("/news/categories/$categorie->categorie/1");
+                                            }
+                                            ?>">{{$categorie->categorie}}<span class="badge">{{$count}}</span></a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -117,12 +127,15 @@
                     <div class="widget blog_gallery">
                         <h3>Our Gallery</h3>
                         <ul class="sidebar-gallery">
-                            <li><a href="#"><img src="images/blog/gallery1.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery2.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery3.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery4.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery5.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/blog/gallery6.png" alt="" /></a></li>
+                            <? $pict = \App\article::all();
+                            $i=0;
+                            foreach($pict as $p){
+                                $i++;
+                                if (!($i>18)){
+                                    echo ("<li><a href=\"$p->pictures\"><img src=\"$p->pictures\" width=\"105\" height=\"71\" alt=\"\" /></a></li>");
+                                }else break;
+                            }
+                            ?>
                         </ul>
                     </div>
                     <!--/.blog_gallery-->
