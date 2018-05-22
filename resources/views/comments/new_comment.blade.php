@@ -2,7 +2,7 @@
 	<div id="comment-{{$data['id']}}" class="comment-container new_comment">
 		<div class="comment-author vcard">
 			<img alt="" src="https:{{$data['hash']}}?d=mm&s=75" class="avatar" height="75" width="75" />
-			<cite class="fn">{{$data['name']}}</cite>                 
+			<cite class="fn">{{$data['user']}}</cite>
 		</div>
 
 		<div class="comment-meta commentmetadata">

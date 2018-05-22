@@ -4,7 +4,7 @@
 	<div id="comment-{{$item->id}}" class="comment-container">
 		<div class="comment-author vcard">
 			<img alt="" src="https://www.gravatar.com/avatar/{{md5($item->email)}}?d=mm&s=75" class="avatar" height="75" width="75" />
-			<cite class="fn">{{$item->name}}</cite>                 
+			<cite class="fn">{{$item->user}}</cite>
 		</div>
 
 		<div class="comment-meta commentmetadata">
@@ -18,7 +18,15 @@
 				<p>{{ $item->text }}</p>
 			</div>
 			<div class="reply group">
-				<a class="comment-reply-link" href="#respond" onclick="return addComment.moveForm(&quot;comment-{{$item->id}}&quot;, &quot;{{$item->id}}&quot;, &quot;respond&quot;, &quot;{{$item->article_id}}&quot;)">Ответить</a>
+				<a class="comment-reply-link" href="#respond" onclick="return addComment.moveForm(&quot;comment-{{$item->id}}&quot;,&quot;{{$item->id}}&quot;,&quot;respond&quot;,&quot;{{$item->article_id}}&quot;)">Ответить</a>
+
+				<!--Проверяем пользователя и выводим кнопку удалить комментарий-->
+
+					<form action="{{route('commentDelete)}}" method="post">
+						<input type="hidden" id="commentId" name="commentId" value="{{$item->id}}">
+						<input type="submit" id="submit" name="submit" value="удалить">
+					</form>
+
 			</div>
 		</div>
 	</div>

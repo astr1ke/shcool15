@@ -37,14 +37,14 @@ class CommentController extends Controller
 
 		if($user) {
 		    $data['user_id'] = $user->id;
-			$data['name'] = (!empty($data['name'])) ? $data['name'] : $user->name;
+			$data['user'] = (!empty($data['user'])) ? $data['user'] : $user->user;
 			$data['email'] = (!empty($data['email'])) ? $data['email'] : $user->email;
 		}
 
 		$validator = Validator::make($data,[
 			'article_id' => 'integer|required',
 			'text' => 'required',
-			'name' => 'required',
+			'user' => 'required',
 			'email' => 'required|email',
 		]);
 
@@ -71,7 +71,18 @@ class CommentController extends Controller
 
 
         return response()->json(['success'=>true, 'comment'=>$view_comment, 'data'=>$data]);
-
-
 	}
+
+	public function delete(Request $request){
+	    if (Auth::user()->isAdmin = 1){
+            Comment::destroy($request->commentId);
+            Comment::where('parent_id', $request->commentId)->delete();
+        }else{
+	        $comment = Comment::where('id',$request->commentId)->get;
+	        $comment->text = 'Пользователь удалил свой комментарий';
+	        $comment->save;
+        }
+
+
+    }
 }
