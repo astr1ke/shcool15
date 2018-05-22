@@ -19,6 +19,9 @@
 			</div>
 			<div class="reply group">
 				<a class="comment-reply-link" href="#respond" onclick="return addComment.moveForm(&quot;comment-{{$item->id}}&quot;, &quot;{{$item->id}}&quot;, &quot;respond&quot;, &quot;{{$item->article_id}}&quot;)">Ответить</a>
+				@if((\Illuminate\Support\Facades\Auth::user()->isAdmin == 1)or((\Illuminate\Support\Facades\Auth::user() == $item->name)and ($item->text != 'Пользователь удалил свой комментарий')))
+					<a class="comment-reply-link" href="/delete/{{$item->id}}" >Редактировать</a>
+				@endif
 			</div>
 		</div>
 	</div>

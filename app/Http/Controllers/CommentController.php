@@ -71,7 +71,19 @@ class CommentController extends Controller
 
 
         return response()->json(['success'=>true, 'comment'=>$view_comment, 'data'=>$data]);
-
-
 	}
+
+	public function delete($id){
+	   if(Auth::user()->isAdmin){
+           Comment::destroy($id);
+           Comment::where('parent_id',$id)->delete();
+       }else{
+	       $com = Comment::where('id',$id)->get();
+	       $com->text = 'Пользователь удалил свой комментарий';
+	       $com->save();
+	       }
+
+
+    }
+)
 }
