@@ -73,6 +73,7 @@ class CommentController extends Controller
         return response()->json(['success'=>true, 'comment'=>$view_comment, 'data'=>$data]);
 	}
 
+
 	public function delete(){
         if (Auth::user()->IsAdmin == 1){
             Comment::destroy($_POST['id']);
@@ -82,8 +83,5 @@ class CommentController extends Controller
             $comment->text = 'Пользователь удалил свой комментарий';
             $comment->save();
         }
-
-
-
     }
 }

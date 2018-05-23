@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\article;
 use App\categorie;
+use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Stmt\If_;
@@ -11,10 +12,9 @@ use PhpParser\Node\Stmt\If_;
 class NewsController extends Controller
 {
     public function index($id){
-        $art = article::all(); // получение всех статей
+        $art = article::latest()->get(); // получение всех статей
         $st = ceil((count($art))/5); //получения количеста страниц для отображения новостей
-        $art->sortByDesc('id'); //сортируем статьи в обратном порядке
-        $art->slice(($id-1)*5,5);
+        $art = $art->slice(($id-1)*5,5);
         //$n1 =  array_reverse($n->toArray()); //реверс массива
         //$news = array_slice($n1, (($id-1)*5), 5); //получение конкретных записей для отображения на данной странице
 
@@ -30,10 +30,9 @@ class NewsController extends Controller
 
     public function categorieView($cat,$id){ //Отображение статей с определенными сатегориями
 
-        $art = article::where('categorie',$cat)->get();// получение необходимых статей
+        $art = article::where('categorie',$cat)->latest()->get();// получение необходимых статей
         $st = ceil((count($art))/5); //получения количеста страниц для отображения новостей
-        $art->sortByDesc('id'); //сортируем статьи в обратном порядке
-        $art->slice(($id-1)*5,5);
+        $art = $art->slice(($id-1)*5,5);
 
         if (Auth::check() and Auth::user()->IsAdmin ){
             $isAdmin = True;}
@@ -44,23 +43,10 @@ class NewsController extends Controller
 
 
         return view('newsAll',['news'=>$art,'st'=>$st,'id'=>$id,'isAdmin'=>$isAdmin,'categories'=>$cat,'c'=>$c]);
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     public function delete ($id){
-
+        Comment::where('article_id',$id)->delete();
         article::where('id',$id)->delete();
         return redirect('/news/1');
 
