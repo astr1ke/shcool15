@@ -78,9 +78,9 @@ class CommentController extends Controller
             Comment::destroy($_POST['id']);
             Comment::where('parent_id', $_POST['id'])->delete();
         }else{
-            $comment = Comment::where('id',$_POST['id'])->get;
+            $comment = Comment::find($_POST['id']);
             $comment->text = 'Пользователь удалил свой комментарий';
-            $comment->save;
+            $comment->save();
         }
 
 
