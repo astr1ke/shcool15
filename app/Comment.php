@@ -16,6 +16,7 @@ class Comment extends Model
      */
     protected $guarded = [];
 
+
     /**
      * Связь с моделью Post
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

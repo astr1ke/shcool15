@@ -47,7 +47,7 @@ jQuery(document).ready(function($){
                                     if(html.data.status == false) {
 
                                         wrap_result.html('<strong>Комментарий появится после проверки администратором</strong><br>').show(500);
-                                        setTimeout(function() { wrap_result.hide('slow'); }, 3000); //скрываем через 3 сек
+                               z         setTimeout(function() { wrap_result.hide('slow'); }, 3000); //скрываем через 3 сек
 
                                         //имитируем нажатие кнопки отмены ответа на комментарий для возврата формы вниз
                                         $('#cancel-comment-reply-link').click();

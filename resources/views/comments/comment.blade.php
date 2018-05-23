@@ -19,16 +19,16 @@
 			</div>
 			<div class="reply group">
 				<a class="comment-reply-link" href="#respond" onclick="return addComment.moveForm(&quot;comment-{{$item->id}}&quot;,&quot;{{$item->id}}&quot;,&quot;respond&quot;,&quot;{{$item->article_id}}&quot;)">Ответить</a>
-
-				<!--Проверяем пользователя и выводим кнопку удалить комментарий-->
-
-					<form action="{{route('commentDelete)}}" method="post">
-						<input type="hidden" id="commentId" name="commentId" value="{{$item->id}}">
-						<input type="submit" id="submit" name="submit" value="удалить">
-					</form>
-
+				<?
+				if(\Illuminate\Support\Facades\Auth::check()){
+				if((\Illuminate\Support\Facades\Auth::user()->IsAdmin == 1) or
+				((\Illuminate\Support\Facades\Auth::user()->name == $item->user)and
+				($item->text != 'Пользователь удалил свой комментарий'))){
+					echo ("<a class=\"comment-reply-link\" href=\"#respond\" onclick=\"return delComment.updForm(&quot;$item->id&quot;)\">Удалить</a>");
+				}
+				}
+				?>
 			</div>
-		</div>
 	</div>
 	
 	

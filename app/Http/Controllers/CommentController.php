@@ -37,7 +37,7 @@ class CommentController extends Controller
 
 		if($user) {
 		    $data['user_id'] = $user->id;
-			$data['user'] = (!empty($data['user'])) ? $data['user'] : $user->user;
+			$data['user'] = (!empty($data['user'])) ? $data['user'] : $user->name;
 			$data['email'] = (!empty($data['email'])) ? $data['email'] : $user->email;
 		}
 
@@ -73,15 +73,16 @@ class CommentController extends Controller
         return response()->json(['success'=>true, 'comment'=>$view_comment, 'data'=>$data]);
 	}
 
-	public function delete(Request $request){
-	    if (Auth::user()->isAdmin = 1){
-            Comment::destroy($request->commentId);
-            Comment::where('parent_id', $request->commentId)->delete();
+	public function delete(){
+        if (Auth::user()->IsAdmin == 1){
+            Comment::destroy($_POST['id']);
+            Comment::where('parent_id', $_POST['id'])->delete();
         }else{
-	        $comment = Comment::where('id',$request->commentId)->get;
-	        $comment->text = 'Пользователь удалил свой комментарий';
-	        $comment->save;
+            $comment = Comment::where('id',$_POST['id'])->get;
+            $comment->text = 'Пользователь удалил свой комментарий';
+            $comment->save;
         }
+
 
 
     }

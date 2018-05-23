@@ -1,5 +1,17 @@
+delComment = {
+        updForm: function (d) {
+            var data = d;
+
+
+            $.post('/commentDelete', {id: data, _method: 'delete', _token: $('meta[name="csrf-token"]').attr('content')});
+            location.reload();
+        },
+
+    };
+
+
 addComment = {
-    moveForm: function(d, f, i, c) {
+    moveForm: function (d, f, i, c) {
         var m = this,
             a, h = m.I(d),
             b = m.I(i),
@@ -7,7 +19,7 @@ addComment = {
             j = m.I("comment_parent"),
             k = m.I("comment_post_ID");
         if (!h || !b || !l || !j) {
-			alert(1);
+            alert(1);
             return
         }
         m.respondId = i;
@@ -24,7 +36,7 @@ addComment = {
         }
         j.value = f;
         l.style.display = "";
-        l.onclick = function() {
+        l.onclick = function () {
             var n = addComment,
                 e = n.I("wp-temp-form-div"),
                 o = n.I(n.respondId);
@@ -40,10 +52,11 @@ addComment = {
         };
         try {
             m.I("comment").focus()
-        } catch (g) {}
+        } catch (g) {
+        }
         return false
     },
-    I: function(a) {
+    I: function (a) {
         return document.getElementById(a)
     }
 };
