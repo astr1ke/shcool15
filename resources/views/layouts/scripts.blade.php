@@ -7,6 +7,7 @@
 <script src="{{asset('js/wow.min.js')}}"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo77G7S7s_IsNMwDwricUZ1fKi8bp0Gfo"></script>
+
 <script src="{{asset('contactform/contactform.js')}}"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
 <!--Скрипты коментариев-->

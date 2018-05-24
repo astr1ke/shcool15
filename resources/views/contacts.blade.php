@@ -10,20 +10,29 @@
         </div>
     </div>
 
-    <div class="map">
-        <div id="google-map" data-latitude="44.848885" data-longitude="41.329495"></div>
+    <div class="map" >
+        <<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3252.2041029395373!2d41.32937217359657!3d44.84917508172796!3m2!1i1024!2i768!4f13.
+        1!3m3!1m2!1s0x40f9c5d18ffe0627%3A0x91834f94af1f3938!2z0KjQutC-0LvQsCAxNQ!5e1!3m2!1sru!2sru!4v1525903502434"
+        width=1170 height="400" frameborder="0" style="
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        border: none;" allowfullscreen></iframe>
+
+
     </div>
+
+
 
     <section id="contact-page">
         <div class="container">
             <div class="center">
-                <h2>Drop Your Message</h2>
-                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2>Создайте сообщение</h2>
             </div>
             <div class="row contact-wrap">
                 <div class="status alert alert-success" style="display: none"></div>
                 <div class="col-md-6 col-md-offset-3">
-                    <div id="sendmessage">Your message has been sent. Thank you!</div>
+                    <div id="sendmessage">Ваше сообщение отправлено. Спасибо!</div>
                     <div id="errormessage"></div>
                     <form action="" method="post" role="form" class="contactForm">
                         <div class="form-group">
@@ -42,7 +51,7 @@
                             <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                             <div class="validation"></div>
                         </div>
-                        <div class="text-center"><button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button></div>
+                        <div class="text-center"><button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Отправить сообщение</button></div>
                     </form>
                 </div>
             </div>
@@ -51,7 +60,4 @@
         <!--/.container-->
     </section>
     <!--/#contact-page-->
-
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3252.2041029395373!2d41.32937217359657!3d44.84917508172796!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f9c5d18ffe0627%3A0x91834f94af1f3938!2z0KjQutC-0LvQsCAxNQ!5e1!3m2!1sru!2sru!4v1525903502434" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-
 @endsection

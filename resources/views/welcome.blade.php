@@ -96,8 +96,8 @@
 <section id="partner">
     <div class="container">
         <div class="center wow fadeInDown">
-            <h2>Наши слу</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            <h2>Ссылки на другие образовательные ресурсы</h2>
+            <p>Если Вас интересует другая информация по образовательной тематике вы можете поискать ее на преставленных ниже серурсах: <br>  </p>
         </div>
 
         <div class="partners">
@@ -123,8 +123,8 @@
                         <i class="fa fa-phone"></i>
                     </div>
                     <div class="media-body">
-                        <h2>Have a question or need a custom quote?</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation +0123 456 70 80</p>
+                        <h2>У вас есть вопросы к нам?</h2>
+                        <p>Вы можете отправить сообщение нам на почту Mail-shcool15@mail.ru или посзонить по номеру телефона +7 (86140) 67251</p>
                     </div>
                 </div>
             </div>
