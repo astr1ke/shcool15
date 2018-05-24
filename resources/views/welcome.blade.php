@@ -83,7 +83,8 @@
         </div>
         @foreach($articles as $article)
         <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <?$txt=mb_strimwidth($article->text,0,300,'...');$txt=preg_replace ('/<img.*>/Uis', '', $txt);?> <!---  обрезаем колво символов для превью статей на главной --->
+            <?$txt=mb_strimwidth($article->text,0,300,'...');$txt=preg_replace ('/<img.*>/Uis', '', $txt);
+            $txt=preg_replace ('/<img[^>]*?src=\"(.*)\"/iU', '', $txt);?> <!---  обрезаем колво символов для превью статей на главной --->
             <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
             <h3>{{$article['articleName']}}</h3>
             <p>{!!$txt!!}
