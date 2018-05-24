@@ -5,8 +5,19 @@
             <div class="row">
                 <div class="col-xs-4">
                     <div class="header-social">
-                        <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=twitter,google,yandex,googleplus,instagram;redirect_uri=%2FloginS;mobilebuttons=0;"></div>
+                        <script src="//ulogin.ru/js/ulogin.js"></script>
+                        <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2F;mobilebuttons=0;"></div>
                     </div>
+                    <div class="fzinfo-link"><a href="http://school.wunderpark.ru/svedeniya-ob-obrazovatelnoj-org"></a></div>
+                    @if (!(Auth::check()))
+                        <div class="signup">
+                            <a class="btn-flat nyroModal" href="/login" >Войти на сайт</a>
+                        </div>
+                    @else
+                    <div class="signup">
+                        <a class="btn-flat nyroModal" href="/logout" >Выйти с сайта</a>
+                    </div>
+                    @endif
                 </div>
                 <div class="col-xs-4">
                     <div class="top-logo">
@@ -20,27 +31,19 @@
                     <div class="callback">
                         <a class="nyroModal" href="/ajax/modal/callback" onclick="yaCounter30740753.reachGoal('zakaz_zvonka'); return true;">Отправить нам E-mail</a>
                     </div>
-                    @if (!(Auth::check()))
-                        <div class="signup">
-                            <a class="btn-flat nyroModal" href="/login" >Войти на сайт</a>
-                        </div>
-                    @else\
-                        <div class="signup">
-                            <a class="btn-flat nyroModal" href="/logout" >Выйти с учетной записи</a>
-                        </div>
-                    @endif
-
                 </div>
             </div>
             <!-- menu -->
             <div id="main_menu" class="row">
                 <div class="col-md-12">
                     <ol class="main-menu-list">
+                        <li><a href="/" >Главная</a></li>
+
                         <li><a href="/about" >О школе</a><ul>
                         <li><a href="/about">О школе</a></li>
                         <li><a href="/teachers">Наши педагоги</a></li></ul></li>
 
-                        <li><span>Жизнь школы</span><ul>
+                        <li><a href="/news/1" >Жизнь школы</a><ul>
                         <li><a href="/news/1" >События</a></li>
                         <li><a href="/gallery">Фотогалерея</a></li></ul></li>
 
@@ -58,7 +61,6 @@
                         <li><a href="/contacts" >Контакты</a></li>			</ol>
                 </div>
             </div>
-        </div></div>
-
-
+        </div>
+    </div>
 </header>

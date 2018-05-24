@@ -1,12 +1,12 @@
 @extends('layouts.layouts')
 @section('content')
 
-    <div id="breadcrumb">
-        <div class="container">
-            <div class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Contact</li>
-            </div>
+    <div class="container">
+        <div class="row">
+            <ol class="breadcrumb" itemscope itemtype="">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" class="first" itemprop="item"><span itemprop="name">Главная</span><meta itemprop="position" content="1"></a></li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item"><span itemprop="name">Контакты</span><meta itemprop="position" content="2"></a></li>
+            </ol>
         </div>
     </div>
 

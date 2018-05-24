@@ -24,20 +24,10 @@
         }
     </style>
 
-
-    <? if(isset($c)){
-        echo("- $c");
-    }?>
-
-    </li>
-    @if($isAdmin==1)
-        <li><a href="/articles">Добавить статью</a></li>
-    @endif
-
-
 </head>
 @include('layouts.header')
 <body>
+
 
 <div class="container">
     <div class="row">

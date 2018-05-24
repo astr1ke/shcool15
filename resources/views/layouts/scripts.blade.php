@@ -14,7 +14,7 @@
 <script type="text/javascript" src="{{asset('comments/js')}}/comment-reply.js"></script>
 <script type="text/javascript" src="{{asset('comments/js')}}/comment-scripts.js"></script>
 <!--меню-->
-<script type="text/javascript" src="{{asset('js')}}/school.js"></script><script>
+<script type="text/javascript" src="{{asset('js')}}/school.js"></script>
 <script type="text/javascript" src="{{asset('js')}}/jquery.maskedinput.min.js"></script>
 <script type="text/javascript" src="{{asset('js')}}/jquery.nyroModal.custom.min.js"></script>
 <script src="//ulogin.ru/js/ulogin.js"></script>
