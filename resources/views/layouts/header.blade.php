@@ -1,40 +1,64 @@
 <header>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="navigation" >
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand">
-                        <a href="/"><h1><span>Шко</span>ла №15</h1></a>
+    <!-- header -->
+    <div id="header" >
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="header-social">
+                        <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=twitter,google,yandex,googleplus,instagram;redirect_uri=%2FloginS;mobilebuttons=0;"></div>
                     </div>
                 </div>
-
-                <div class="navbar-collapse collapse">
-                    <div class="menu">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a href="/" @if($_SERVER['REQUEST_URI'] == '/') class="active"@endif>Главная</a></li>
-                            <li role="presentation"><a href="/about" @if($_SERVER['REQUEST_URI'] == '/about') class="active"@endif>О нас</a></li>
-                            <li role="presentation"><a href="/news/1" @if(substr($_SERVER['REQUEST_URI'],0,6) == '/news/' or
-                                                                      substr($_SERVER['REQUEST_URI'],0,6) == '/artic' ) class="active"@endif>Жизнь школы</a></li>
-                            <li role="presentation"><a href="/gallery" @if($_SERVER['REQUEST_URI'] == '/gallery') class="active"@endif>Наша Галерея</a></li>
-                            <li role="presentation"><a href="/learner" @if($_SERVER['REQUEST_URI'] == '/learner') class="active"@endif>Учителям</a></li>
-                            <li role="presentation"><a href="/contacts" @if($_SERVER['REQUEST_URI'] == '/contacts') class="active"@endif>Контакты</a></li>
-                            @if (!(Auth::check()))
-                            <li role="presentation"><a href="/login">Войти</a></li>
-                            @else
-                            <li role="presentation"><a href="/logout">Выйти</a></li>
-                            @endif
-
-
-                        </ul>
+                <div class="col-xs-4">
+                    <div class="top-logo">
+                        <a rel='nofollow'  class="top-logo-link" href="/">Школа №15 </a>
                     </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="phone">Тел.: +7 (86140) 67251
+                        <div class="address"><a href="/contacts">село Коноково, улица Донская,5.</a></div>
+                    </div>
+                    <div class="callback">
+                        <a class="nyroModal" href="/ajax/modal/callback" onclick="yaCounter30740753.reachGoal('zakaz_zvonka'); return true;">Отправить нам E-mail</a>
+                    </div>
+                    @if (!(Auth::check()))
+                        <div class="signup">
+                            <a class="btn-flat nyroModal" href="/login" >Войти на сайт</a>
+                        </div>
+                    @else\
+                        <div class="signup">
+                            <a class="btn-flat nyroModal" href="/logout" >Выйти с учетной записи</a>
+                        </div>
+                    @endif
+
                 </div>
             </div>
-        </div>
-    </nav>
+            <!-- menu -->
+            <div id="main_menu" class="row">
+                <div class="col-md-12">
+                    <ol class="main-menu-list">
+                        <li><a href="/about" >О школе</a><ul>
+                        <li><a href="/about">О школе</a></li>
+                        <li><a href="/teachers">Наши педагоги</a></li></ul></li>
+
+                        <li><span>Жизнь школы</span><ul>
+                        <li><a href="/news/1" >События</a></li>
+                        <li><a href="/gallery">Фотогалерея</a></li></ul></li>
+
+                        <li><span>Наши возможности</span><ul>
+                        <li><a href="http://school.wunderpark.ru/360-gradusov-obrazovatel-nogo-pr">Кружки</a></li>
+                        <li><a href="http://school.wunderpark.ru/wundercity">Дополнительные занятия</a></li>
+                        <li><a href="http://school.wunderpark.ru/gamepark">Детская площадка</a></li>
+                        <li><a href="http://school.wunderpark.ru/stadium">Стадион</a></li>
+                        <li><a href="http://school.wunderpark.ru/lab">Тепличный комплекс</a></li></ul></li>
+
+                        <li><span>Документация</span><ul>
+                        <li><a href="/shcool-documentation">Школьная документация</a></li>
+                        <li><a href="/learner">Для учителей</a></li></ul></li>
+
+                        <li><a href="/contacts" >Контакты</a></li>			</ol>
+                </div>
+            </div>
+        </div></div>
+
+
 </header>

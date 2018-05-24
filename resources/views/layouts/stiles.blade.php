@@ -6,5 +6,7 @@
 <link href="{{asset('css/default.css')}}" rel="stylesheet" type="text/css" />
 
 
-
-
+<link href="{{asset('css/header_block.css')}}" rel="stylesheet" type="text/css"/>
+<link href="{{asset('css')}}/school.css?1517413835" rel="stylesheet"/>
+<link rel="stylesheet" href="{{asset('css')}}/bootstrap.css" />
+<link rel="stylesheet" href="{{asset('css')}}/nyroModal.css" media="all">

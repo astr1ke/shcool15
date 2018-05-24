@@ -8,7 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Company-HTML Bootstrap theme</title>
 
-    <-Подключаем стили Бутстрап->
     @include('layouts.stiles')
 
 <!--Выбираем цвет фона сообщений и отступы поля-->
@@ -25,26 +24,38 @@
         }
     </style>
 
+
+    <? if(isset($c)){
+        echo("- $c");
+    }?>
+
+    </li>
+    @if($isAdmin==1)
+        <li><a href="/articles">Добавить статью</a></li>
+    @endif
+
+
 </head>
-
+@include('layouts.header')
 <body>
-    <div id="breadcrumb">
-        <div class="container">
-            <div class="breadcrumb">
-                <li><a href="/">Главная</a></li>
-                <li>Новости
 
-                <? if(isset($c)){
-                    echo("- $c");
-                    }?>
+<div class="container">
+    <div class="row">
+        <ol class="breadcrumb" itemscope itemtype="">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" class="first" itemprop="item"><span itemprop="name">Главная</span><meta itemprop="position" content="1"></a></li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item"><span itemprop="name">События</span><meta itemprop="position" content="2"></a></li>
+            <? if(isset($c)){
+                echo("- $c");
+            }?>
 
-                </li>
-                @if($isAdmin==1)
-                    <li><a href="/articles">Добавить статью</a></li>
-                @endif
-            </div>
-        </div>
+            </li>
+            @if($isAdmin==1)
+                <li><a href="/articles">Добавить статью</a></li>
+            @endif
+        </ol>
     </div>
+</div>
+
 
     <section id="blog" class="container">
         <div class="blog">
@@ -207,8 +218,6 @@
             </div>
         </div>
     </section>
-
-    @include('layouts.header')
 
     @yield('content');
 

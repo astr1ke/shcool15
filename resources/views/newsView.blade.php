@@ -31,16 +31,15 @@
 
     @include('layouts.header')
 
-    <div id="breadcrumb">
-        <div class="container">
-            <div class="breadcrumb">
-                <li><a href="/">Главная</a></li>
-                <li>Новости  / </li>
-                    @foreach($news as $newS)
-                    <label><a>{{$newS['articleName']}}</a></label>
-                    @endforeach
-                <li><a href="/news/1">/ Вернуться</a></li>
-            </div>
+    <div class="container">
+        <div class="row">
+            <ol class="breadcrumb" itemscope itemtype="">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" class="first" itemprop="item"><span itemprop="name">Главная</span><meta itemprop="position" content="1"></a></li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item"><span itemprop="name">События</span><meta itemprop="position" content="2"></a></li>
+                @foreach($news as $newS)
+                    <label><a>{{' / '.$newS['articleName']}}</a></label>
+                @endforeach
+            </ol>
         </div>
     </div>
 
