@@ -17,7 +17,12 @@
 <script type="text/javascript" src="{{asset('js')}}/school.js"></script>
 <script type="text/javascript" src="{{asset('js')}}/jquery.maskedinput.min.js"></script>
 <script type="text/javascript" src="{{asset('js')}}/jquery.nyroModal.custom.min.js"></script>
+<script type="text/javascript" src="{{asset('js')}}/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{asset('js')}}/jquery.wpModal.js"></script>
+
 <script src="//ulogin.ru/js/ulogin.js"></script>
+
 
 
 

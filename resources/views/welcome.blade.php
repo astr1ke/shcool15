@@ -1,32 +1,18 @@
 @extends('layouts.layouts')
 @section('content')
-<section id="main-slider" class="no-margin">
-    <div class="carousel slide">
-        <div class="carousel-inner">
-            <div class="item active" style="background-image: url(images/main.jpg)">
-                <div class="container">
-                    <div class="row slide-margin">
-                        <div class="col-sm-6">
-                            <div class="carousel-content">
-                                <h2 class="animation animated-item-1">Добро пожаловать <span>На сайт нашей школы</span></h2>
-                                <p class="animation animated-item-2">Самой замечательной школы на земле :)</p>
-                                <a class="btn-slide animation animated-item-3" href="/about">О нас</a>
-                            </div>
-                        </div>
 
-
-
-                    </div>
-                </div>
-            </div>
-            <!--/.item-->
+    <!-- slider -->
+    <div class="container-fluid">
+        <div id="slider" class="row">
+            <ul class="bxslider">
+                <li>
+                    <img src="images/main.jpg"/>
+                </li>
+            </ul>
         </div>
-        <!--/.carousel-inner-->
     </div>
-    <!--/.carousel-->
-</section>
-<!--/#main-slider-->
 
+    <!--Контент-->
 <div class="feature">
     <div class="container">
         <div class="text-center">
@@ -110,8 +96,8 @@
 <section id="partner">
     <div class="container">
         <div class="center wow fadeInDown">
-            <h2>Сайты образовательных организаций края</h2>
-            <p>Ссылки на сайты образовательным учреждений и министерст <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            <h2>Наши слу</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
         </div>
 
         <div class="partners">

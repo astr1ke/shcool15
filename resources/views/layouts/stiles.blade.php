@@ -10,3 +10,5 @@
 <link href="{{asset('css')}}/school.css?1517413835" rel="stylesheet"/>
 <link rel="stylesheet" href="{{asset('css')}}/bootstrap.css" />
 <link rel="stylesheet" href="{{asset('css')}}/nyroModal.css" media="all">
+<link rel="stylesheet" href="{{asset('css')}}/jquery.bxslider.css" />
+<link rel="stylesheet" href="{{asset('css')}}/slider.css" media="all">

@@ -8,7 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Company-HTML Bootstrap theme</title>
 
-    <-Подключаем стили Бутстрап->
     @include('layouts.stiles')
     <!--Стили коментариев-->
     <link rel="stylesheet" type="text/css" media="all" href="{{asset('comments/css')}}/comments.css" />
