@@ -68,87 +68,21 @@
         <div class="amazingcarousel-list-container">
             <ul class="amazingcarousel-list">
 
+                <?
+                $teachers = \App\teacher::all();
+                ?>
+                @foreach($teachers as $teacher)
                 <li class="amazingcarousel-item">
                     <div class="col-md-31 col-xs-61">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        <a href="/teachers">
+                            <span class="img-border-circle"><img src="{{$teacher->foto}}"/></span>
+                            <div class="section-title-2 name">{{$teacher->FIO}}</div>
+                            <div class="job-title">{{$teacher->specialization}}</div>
                         </a>
                     </div>
                 </li>
-                <li class="amazingcarousel-item">
-                    <div class="col-md-31 col-xs-61">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/teaches/1.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
-                        </a>
-                    </div>
-                </li>
-                <li class="amazingcarousel-item">
-                    <div class="col-md-31 col-xs-61">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/teaches/1.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
-                        </a>
-                    </div>
-                </li>
-                <li class="amazingcarousel-item">
-                    <div class="col-md-31 col-xs-61">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
-                        </a>
-                    </div>
-                </li>
-                <li class="amazingcarousel-item">
-                    <div class="col-md-31 col-xs-61">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
-                        </a>
-                    </div>
-                </li>
-                <li class="amazingcarousel-item">
-                    <div class="col-md-31 col-xs-61">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
-                        </a>
-                    </div>
-                </li>
-                <li class="amazingcarousel-item">
-                    <div class="col-md-31 col-xs-61">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
-                        </a>
-                    </div>
-                </li>
-                <li class="amazingcarousel-item">
-                    <div class="col-md-31 col-xs-61">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
-                        </a>
-                    </div>
-                </li>
-                <li class="amazingcarousel-item">
-                    <div class="col-md-31 col-xs-61">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
-                        </a>
-                    </div>
-                </li>
+                @endforeach
+
 
 
             </ul>

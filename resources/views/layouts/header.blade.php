@@ -43,9 +43,9 @@
                         <li><a href="/about">О школе</a></li>
                         <li><a href="/teachers">Наши педагоги</a></li></ul></li>
 
-                        <li><a href="/news/1" >Жизнь школы</a><ul>
+                        <li><a href="/news/1" >Жизнь школы</a><!--<ul>
                         <li><a href="/news/1" >События</a></li>
-                        <li><a href="/gallery">Фотогалерея</a></li></ul></li>
+                        <li><a href="/gallery">Фотогалерея</a></li>--></ul></li>
 
                         <li><span>Наши возможности</span><ul>
                         <li><a href="http://school.wunderpark.ru/360-gradusov-obrazovatel-nogo-pr">Кружки</a></li>
