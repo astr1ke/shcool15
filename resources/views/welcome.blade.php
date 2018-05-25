@@ -11,48 +11,34 @@
             </ul>
         </div>
     </div>
-
-    <!--Контент-->
-<div class="feature">
-    <div class="container">
-        <div class="text-center">
-            <div class="col-md-3">
-                <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <i class="fa fa-book"></i>
-                    <h2>Чечин Сергей Юрьевич</h2>
-                    <p>Директор школы. Самый главный чувак</p>
-                </div>
+<!--Последние новости-->
+    <div class="lates">
+        <div class="container">
+            <div class="text-center">
+                <h2>Последние новости</h2>
             </div>
-            <div class="col-md-3">
-                <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <i class="fa fa-laptop"></i>
-                    <h2>Шматко Татьяна Ивановна</h2>
-                    <p>Учитель иностранных языков и классный руководитель</p>
+            @foreach($articles as $article)
+                <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <?
+                $txt=$article->text;
+                $txt=preg_replace ('/<img.*>/Uis', '', $txt);
+                $txt=preg_replace ('/<img[^>]*?src=\"(.*)\"/iU', '', $txt);
+                $txt=strip_tags($txt, '<br>');
+                $txt=mb_strimwidth($txt,0,300,'...');
+                ?> <!---  обрезаем колво символов для превью статей на главной --->
+                    <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
+                        <h3>{{$article['articleName']}}</h3></a>
+                        <p>{!!$txt!!}</p>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
-                    <i class="fa fa-heart-o"></i>
-                    <h2>Иванова Наталья алексеевна</h2>
-                    <p>Учитель русского языка и литературы.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
-                    <i class="fa fa-cloud"></i>
-                    <h2>Смирнов Дмитрий Дмитриевич</h2>
-                    <p>Учитель физкультуры и ОБЖ</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-</div>
 
 <div class="about">
     <div class="container">
         <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <h2>О нас</h2>
-            <img src="images/6.jpg" class="img-responsive" />
+            <img src="images/about.jpg" class="img-responsive" />
             <p>Учебное заведение находится по адресу: Краснодарский край, Успенский район,
                 село Коноково, улица Донская,5.
             </p>
@@ -76,24 +62,105 @@
     </div>
 </div>
 
-<div class="lates">
-    <div class="container">
-        <div class="text-center">
-            <h2>Последние новости</h2>
+<!--Карусель учителя-->
+<div id="amazingcarousel-container-1">
+    <div id="amazingcarousel-1" style="display:none;position:relative;width:100%;max-width:1040px;margin:0px auto 0px;">
+        <div class="amazingcarousel-list-container">
+            <ul class="amazingcarousel-list">
+
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/teaches/1.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/teaches/1.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/teaches/teach.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                </li>
+
+
+            </ul>
+            <div class="amazingcarousel-prev"></div>
+            <div class="amazingcarousel-next"></div>
         </div>
-        @foreach($articles as $article)
-        <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <?$txt=mb_strimwidth($article->text,0,300,'...');$txt=preg_replace ('/<img.*>/Uis', '', $txt);
-            $txt=preg_replace ('/<img[^>]*?src=\"(.*)\"/iU', '', $txt);?> <!---  обрезаем колво символов для превью статей на главной --->
-            <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
-            <h3>{{$article['articleName']}}</h3>
-            <p>{!!$txt!!}
-            </p></a>
-        </div>
-        @endforeach
+        <div class="amazingcarousel-nav"></div>
+        <div class="amazingcarousel-engine"><a href="http://amazingcarousel.com">JavaScript Image Carousel</a></div>
     </div>
 </div>
 
+<!--Партнерские ресурсы-->
 <section id="partner">
     <div class="container">
         <div class="center wow fadeInDown">
@@ -115,23 +182,5 @@
 </section>
 <!--/#partner-->
 
-<section id="conatcat-info">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="pull-left">
-                        <i class="fa fa-phone"></i>
-                    </div>
-                    <div class="media-body">
-                        <h2>У вас есть вопросы к нам?</h2>
-                        <p>Вы можете отправить сообщение нам на почту Mail-shcool15@mail.ru или посзонить по номеру телефона +7 (86140) 67251</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/.container-->
-</section>
-<!--/#conatcat-info-->
+
 @stop

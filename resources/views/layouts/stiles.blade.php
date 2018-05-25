@@ -12,3 +12,5 @@
 <link rel="stylesheet" href="{{asset('css')}}/nyroModal.css" media="all">
 <link rel="stylesheet" href="{{asset('css')}}/jquery.bxslider.css" />
 <link rel="stylesheet" href="{{asset('css')}}/slider.css" media="all">
+
+<link rel="stylesheet" type="text/css" href="{{asset('modules/carousel')}}/initcarousel-1.css">
