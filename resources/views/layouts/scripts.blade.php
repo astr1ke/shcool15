@@ -24,55 +24,10 @@
 
 <script src="//ulogin.ru/js/ulogin.js"></script>
 
-<<<<<<< HEAD
-<script>
-    $(document).ready(function(){
-        $('.bxslider').bxSlider({
-            mode: 'fade',
-            auto: true,
-            controls: false,
-            pause: 5000
-        });
-        $('.item-slider').bxSlider({
-            controls: true,
-            pager: false
-        });
-
-        $('#EduCalcAge').focus(function(){
-            if ($(this).val() < 1) $(this).val('');
-        });
-        $('#EduCalcAge').blur(function(){
-            if ($(this).val() < 1) $(this).val(0);
-        });
-
-        $video = $(".video-banner__video");
-        $("#video-mute").click( function (){
-            textOn = $(this).data('text-on');
-            textOff = $(this).data('text-off');
-            if( $video.prop('muted') ) {
-                $video.prop('muted', false);
-                $(this).addClass('on').text(textOff);
-            } else {
-                $video.prop('muted', true);
-                $(this).removeClass('on').text(textOn);
-            }
-        });
-
-        $('.bx-pager .bx-pager-item + .bx-pager-item a').click(function(){
-            $video[0].pause();
-        });
-        $('.bx-pager .bx-pager-item:first-child a').click(function(){
-            $video[0].play();
-        });
-    });
-</script>
-
-
-=======
 <script src="{{asset('modules/carousel')}}/jquery.js"></script>
 <script src="{{asset('modules/carousel')}}/amazingcarousel.js"></script>
 <script src="{{asset('modules/carousel')}}/initcarousel-1.js"></script>
->>>>>>> 2eb600a
+
 
 
 

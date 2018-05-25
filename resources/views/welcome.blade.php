@@ -87,65 +87,6 @@
             </li>
         </ul>
     </div>
-<<<<<<< HEAD
-</div>
-
-    <!-- Учителя  -->
-<div class="container">
-    <div class="wp-teachers row">
-        <div class="wp-widget section-title-1 uppercase">
-            Наши педагоги
-            <a class="int-link" href="/teachers">ВСЕ ПЕДАГОГИ</a>
-            <a class="int-question question nyroModal" href="/ajax/question">Задать вопрос?</a>
-        </div>
-        <div class="item-slider-wrapper">
-            <div class="item-slider">
-                <div class="item-slider-row">
-                    <div class="col-md-3 col-xs-6">
-                        <a href="/teachers/victoria-rudenko">
-                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
-                            <div class="section-title-2 name">Виктория Николаевна Руденко</div>
-                            <div class="job-title">Директор школы</div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <a href="/teachers/tatyana-valerievna-chernova">
-                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
-                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
-                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <a href="/teachers/douglas-clementson">
-                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
-                            <div class="section-title-2 name">Douglas Clementson</div>
-                            <div class="job-title">Классный руководитель Year 4, 5</div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <a href="/teachers/elena-anatolievna-krupchikova">
-                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
-                            <div class="section-title-2 name">Елена Анатольевна Крупчикова</div>
-                            <div class="job-title">Классный руководитель Year 5 </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item-slider-row">
-                    <div class="col-md-3 col-xs-6">
-                        <a href="/teachers/nina-aleksandrovna-kruglova">
-                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
-                            <div class="section-title-2 name">Нина Александровна Круглова</div>
-                            <div class="job-title">Классный руководитель Year 4</div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <a href="/teachers/daniel-lundin">
-                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
-                            <div class="section-title-2 name">Daniel Lundin</div>
-                            <div class="job-title">Классный руководитель Year 3</div>
-                        </a>
-                    </div>
-=======
 <!--Последние новости-->
     <div class="lates">
         <div class="container">
@@ -164,7 +105,6 @@
                     <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
                         <h3>{{$article['articleName']}}</h3></a>
                         <p>{!!$txt!!}</p>
->>>>>>> 2eb600a
                 </div>
             @endforeach
         </div>
@@ -254,84 +194,4 @@
     <!--/.container-->
 </section>
 <!--/#partner-->
-
-<<<<<<< HEAD
-<section id="conatcat-info">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="pull-left">
-                        <i class="fa fa-phone"></i>
-                    </div>
-                    <div class="media-body">
-                        <h2>У вас есть вопросы к нам?</h2>
-                        <p>Вы можете отправить сообщение нам на почту Mail-shcool15@mail.ru или посзонить по номеру телефона +7 (86140) 67251</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/.container-->
-</section>
-<!--/#conatcat-info-->
-
-@include('layouts.footer')
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="{{asset('js')}}/school.js"></script>
-<script type="text/javascript" src="{{asset('js')}}/jquery.maskedinput.min.js"></script>
-<script type="text/javascript" src="{{asset('js')}}/jquery.nyroModal.custom.min.js"></script>
-<script type="text/javascript" src="{{asset('js')}}/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="{{asset('js')}}/jquery.wpModal.js"></script>
-
-<script src="//ulogin.ru/js/ulogin.js"></script>
-
-<script>
-    $(document).ready(function(){
-        $('.bxslider').bxSlider({
-            mode: 'fade',
-            auto: true,
-            controls: false,
-            pause: 5000
-        });
-        $('.item-slider').bxSlider({
-            controls: true,
-            pager: false
-        });
-
-        $('#EduCalcAge').focus(function(){
-            if ($(this).val() < 1) $(this).val('');
-        });
-        $('#EduCalcAge').blur(function(){
-            if ($(this).val() < 1) $(this).val(0);
-        });
-
-        $video = $(".video-banner__video");
-        $("#video-mute").click( function (){
-            textOn = $(this).data('text-on');
-            textOff = $(this).data('text-off');
-            if( $video.prop('muted') ) {
-                $video.prop('muted', false);
-                $(this).addClass('on').text(textOff);
-            } else {
-                $video.prop('muted', true);
-                $(this).removeClass('on').text(textOn);
-            }
-        });
-
-        $('.bx-pager .bx-pager-item + .bx-pager-item a').click(function(){
-            $video[0].pause();
-        });
-        $('.bx-pager .bx-pager-item:first-child a').click(function(){
-            $video[0].play();
-        });
-    });
-</script>
-</body>
-</html>
-=======
-
 @stop
->>>>>>> 2eb600a
