@@ -1,7 +1,17 @@
-@extends('layouts.layouts')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="container">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Company-HTML Bootstrap theme</title>
+    @include('layouts.stiles')
+</head>
+
+<body>
+@include('layouts.header') <div class="container">
         <div class="row">
             <ol class="breadcrumb" itemscope itemtype="">
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" class="first" itemprop="item"><span itemprop="name">Главная</span><meta itemprop="position" content="1"></a></li>
@@ -60,4 +70,10 @@
         <!--/.container-->
     </section>
     <!--/#contact-page-->
-@endsection
+@include('layouts.footer')
+@include('layouts.scripts')
+
+
+</body>
+
+</html>

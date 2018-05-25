@@ -1,52 +1,157 @@
-@extends('layouts.layouts')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- slider -->
-    <div class="container-fluid">
-        <div id="slider" class="row">
-            <ul class="bxslider">
-                <li>
-                    <img src="images/main.jpg"/>
-                </li>
-            </ul>
-        </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=1024">
+    <title>Company-HTML Bootstrap theme</title>
+
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/header_block.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('css')}}/school.css?1517413835" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{asset('css')}}/bootstrap.css" />
+    <link rel="stylesheet" href="{{asset('css')}}/nyroModal.css" media="all">
+    <link rel="stylesheet" href="{{asset('css')}}/jquery.bxslider.css" />
+    <link rel="stylesheet" href="{{asset('css')}}/slider.css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{asset('css')}}/footer_block.css" media="all">
+    <link rel="stylesheet" href="{{asset('css')}}/wpModal.css" media="all">
+    <script>/*IE*/if( 1-'\0' ) document.write('<link rel="stylesheet" href="/assets/css/ie.css">');</script>
+
+    <style>
+        .wp-teachers .item-slider-wrapper .item-slider-row .name {height: 48px; overflow: hidden;}
+        /* video banner */
+        .video-banner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .video-banner__video {
+            width: 100%;
+        }
+        .video-banner__control {
+            position: absolute;
+            left: 80px;
+            display: block;
+            border-radius: 0;
+            border: 2px solid #fff;
+            background: rgba(0,0,0,0.7) url("http://school.wunderpark.ru/assets/uploads/videobanner/volume-mute.svg") 10px center no-repeat;
+            background-size: 35px;
+            color: #fff;
+            padding: 15px 10px 15px 60px;
+            font-size: 20px;
+            z-index: 1;
+            opacity: 0;
+            -webkit-transition: opacity 0.4s;
+            transition: opacity 0.4s;
+        }
+        .video-banner__control.on {
+            background-image: url("http://school.wunderpark.ru/assets/uploads/videobanner/volume-medium.svg");
+        }
+        .video-banner:hover .video-banner__control {
+            opacity: 1;
+        }
+
+        @media (min-width: 1541px) and (max-width: 1705px) {
+            .video-banner__control {
+                top: 360px;
+            }
+        }
+        @media (min-width: 1330px) and (max-width: 1540px) {
+            .video-banner__control {
+                top: 310px;
+            }
+        }
+        @media (min-width: 300px) and (max-width: 1330px) {
+            .video-banner__control {
+                top: 230px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+@include('layouts.header')
+
+<!-- slider -->
+<div class="container-fluid">
+    <div id="slider" class="row">
+        <ul class="bxslider">
+            <li>
+                <img src="images/main.jpg"/>
+            </li>
+        </ul>
     </div>
+</div>
 
-    <!--Контент-->
-<div class="feature">
-    <div class="container">
-        <div class="text-center">
-            <div class="col-md-3">
-                <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <i class="fa fa-book"></i>
-                    <h2>Чечин Сергей Юрьевич</h2>
-                    <p>Директор школы. Самый главный чувак</p>
+    <!-- Учителя  -->
+<div class="container">
+    <div class="wp-teachers row">
+        <div class="wp-widget section-title-1 uppercase">
+            Наши педагоги
+            <a class="int-link" href="/teachers">ВСЕ ПЕДАГОГИ</a>
+            <a class="int-question question nyroModal" href="/ajax/question">Задать вопрос?</a>
+        </div>
+        <div class="item-slider-wrapper">
+            <div class="item-slider">
+                <div class="item-slider-row">
+                    <div class="col-md-3 col-xs-6">
+                        <a href="/teachers/victoria-rudenko">
+                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
+                            <div class="section-title-2 name">Виктория Николаевна Руденко</div>
+                            <div class="job-title">Директор школы</div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <a href="/teachers/tatyana-valerievna-chernova">
+                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
+                            <div class="section-title-2 name">Татьяна Валерьевна Чернова</div>
+                            <div class="job-title">Заместитель директора по учебно-воспитательной работе</div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <a href="/teachers/douglas-clementson">
+                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
+                            <div class="section-title-2 name">Douglas Clementson</div>
+                            <div class="job-title">Классный руководитель Year 4, 5</div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <a href="/teachers/elena-anatolievna-krupchikova">
+                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
+                            <div class="section-title-2 name">Елена Анатольевна Крупчикова</div>
+                            <div class="job-title">Классный руководитель Year 5 </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <i class="fa fa-laptop"></i>
-                    <h2>Шматко Татьяна Ивановна</h2>
-                    <p>Учитель иностранных языков и классный руководитель</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
-                    <i class="fa fa-heart-o"></i>
-                    <h2>Иванова Наталья алексеевна</h2>
-                    <p>Учитель русского языка и литературы.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
-                    <i class="fa fa-cloud"></i>
-                    <h2>Смирнов Дмитрий Дмитриевич</h2>
-                    <p>Учитель физкультуры и ОБЖ</p>
+                <div class="item-slider-row">
+                    <div class="col-md-3 col-xs-6">
+                        <a href="/teachers/nina-aleksandrovna-kruglova">
+                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
+                            <div class="section-title-2 name">Нина Александровна Круглова</div>
+                            <div class="job-title">Классный руководитель Year 4</div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <a href="/teachers/daniel-lundin">
+                            <span class="img-border-circle"><img src="/images/logo.jpg"/></span>
+                            <div class="section-title-2 name">Daniel Lundin</div>
+                            <div class="job-title">Классный руководитель Year 3</div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+    <!-- О нас -->
 
 <div class="about">
     <div class="container">
@@ -134,4 +239,59 @@
     <!--/.container-->
 </section>
 <!--/#conatcat-info-->
-@stop
+
+@include('layouts.footer')
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="{{asset('js')}}/school.js"></script>
+<script type="text/javascript" src="{{asset('js')}}/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="{{asset('js')}}/jquery.nyroModal.custom.min.js"></script>
+<script type="text/javascript" src="{{asset('js')}}/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{asset('js')}}/jquery.wpModal.js"></script>
+
+<script src="//ulogin.ru/js/ulogin.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.bxslider').bxSlider({
+            mode: 'fade',
+            auto: true,
+            controls: false,
+            pause: 5000
+        });
+        $('.item-slider').bxSlider({
+            controls: true,
+            pager: false
+        });
+
+        $('#EduCalcAge').focus(function(){
+            if ($(this).val() < 1) $(this).val('');
+        });
+        $('#EduCalcAge').blur(function(){
+            if ($(this).val() < 1) $(this).val(0);
+        });
+
+        $video = $(".video-banner__video");
+        $("#video-mute").click( function (){
+            textOn = $(this).data('text-on');
+            textOff = $(this).data('text-off');
+            if( $video.prop('muted') ) {
+                $video.prop('muted', false);
+                $(this).addClass('on').text(textOff);
+            } else {
+                $video.prop('muted', true);
+                $(this).removeClass('on').text(textOn);
+            }
+        });
+
+        $('.bx-pager .bx-pager-item + .bx-pager-item a').click(function(){
+            $video[0].pause();
+        });
+        $('.bx-pager .bx-pager-item:first-child a').click(function(){
+            $video[0].play();
+        });
+    });
+</script>
+</body>
+</html>
