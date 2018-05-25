@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="{{asset('css')}}/nyroModal.css" media="all">
 <link rel="stylesheet" href="{{asset('css')}}/jquery.bxslider.css" />
 <link rel="stylesheet" href="{{asset('css')}}/slider.css" media="all">
+<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="{{asset('css')}}/footer_block.css" media="all">
 <link rel="stylesheet" href="{{asset('css')}}/wpModal.css" media="all">
@@ -69,3 +70,7 @@
 </style>
 
 
+=======
+
+<link rel="stylesheet" type="text/css" href="{{asset('modules/carousel')}}/initcarousel-1.css">
+>>>>>>> 2eb600a

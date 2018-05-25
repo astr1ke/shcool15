@@ -38,6 +38,7 @@
     <div class="container">
         <div class="">
             <div class="portfolio-items">
+
                 <div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
                     <div class="recent-work-wrap">
                         <img class="img-responsive" src="images/portfolio/recent/item1.png" alt="">

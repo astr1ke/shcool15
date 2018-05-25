@@ -87,6 +87,7 @@
             </li>
         </ul>
     </div>
+<<<<<<< HEAD
 </div>
 
     <!-- Учителя  -->
@@ -144,11 +145,30 @@
                             <div class="job-title">Классный руководитель Year 3</div>
                         </a>
                     </div>
-                </div>
+=======
+<!--Последние новости-->
+    <div class="lates">
+        <div class="container">
+            <div class="text-center">
+                <h2>Последние новости</h2>
             </div>
+            @foreach($articles as $article)
+                <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <?
+                $txt=$article->text;
+                $txt=preg_replace ('/<img.*>/Uis', '', $txt);
+                $txt=preg_replace ('/<img[^>]*?src=\"(.*)\"/iU', '', $txt);
+                $txt=strip_tags($txt, '<br>');
+                $txt=mb_strimwidth($txt,0,300,'...');
+                ?> <!---  обрезаем колво символов для превью статей на главной --->
+                    <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
+                        <h3>{{$article['articleName']}}</h3></a>
+                        <p>{!!$txt!!}</p>
+>>>>>>> 2eb600a
+                </div>
+            @endforeach
         </div>
     </div>
-</div>
 
 
     <!-- О нас -->
@@ -157,7 +177,7 @@
     <div class="container">
         <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <h2>О нас</h2>
-            <img src="images/6.jpg" class="img-responsive" />
+            <img src="images/about.jpg" class="img-responsive" />
             <p>Учебное заведение находится по адресу: Краснодарский край, Успенский район,
                 село Коноково, улица Донская,5.
             </p>
@@ -181,24 +201,39 @@
     </div>
 </div>
 
-<div class="lates">
-    <div class="container">
-        <div class="text-center">
-            <h2>Последние новости</h2>
+<!--Карусель учителя-->
+<div id="amazingcarousel-container-1">
+    <div id="amazingcarousel-1" style="display:none;position:relative;width:100%;max-width:1040px;margin:0px auto 0px;">
+        <div class="amazingcarousel-list-container">
+            <ul class="amazingcarousel-list">
+
+                <?
+                $teachers = \App\teacher::all();
+                ?>
+                @foreach($teachers as $teacher)
+                <li class="amazingcarousel-item">
+                    <div class="col-md-31 col-xs-61">
+                        <a href="/teachers">
+                            <span class="img-border-circle"><img src="{{$teacher->foto}}"/></span>
+                            <div class="section-title-2 name">{{$teacher->FIO}}</div>
+                            <div class="job-title">{{$teacher->specialization}}</div>
+                        </a>
+                    </div>
+                </li>
+                @endforeach
+
+
+
+            </ul>
+            <div class="amazingcarousel-prev"></div>
+            <div class="amazingcarousel-next"></div>
         </div>
-        @foreach($articles as $article)
-        <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <?$txt=mb_strimwidth($article->text,0,300,'...');$txt=preg_replace ('/<img.*>/Uis', '', $txt);
-            $txt=preg_replace ('/<img[^>]*?src=\"(.*)\"/iU', '', $txt);?> <!---  обрезаем колво символов для превью статей на главной --->
-            <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
-            <h3>{{$article['articleName']}}</h3>
-            <p>{!!$txt!!}
-            </p></a>
-        </div>
-        @endforeach
+        <div class="amazingcarousel-nav"></div>
+        <div class="amazingcarousel-engine"><a href="http://amazingcarousel.com">JavaScript Image Carousel</a></div>
     </div>
 </div>
 
+<!--Партнерские ресурсы-->
 <section id="partner">
     <div class="container">
         <div class="center wow fadeInDown">
@@ -220,6 +255,7 @@
 </section>
 <!--/#partner-->
 
+<<<<<<< HEAD
 <section id="conatcat-info">
     <div class="container">
         <div class="row">
@@ -295,3 +331,7 @@
 </script>
 </body>
 </html>
+=======
+
+@stop
+>>>>>>> 2eb600a

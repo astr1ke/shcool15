@@ -41,6 +41,11 @@ Route::get('articleEdit/article/{id}','ArticlesController@edit');
 Route::post('articleEditRequest','ArticlesController@editStore');
 
 
+//Роуты учителей
+Route::get('/teachers','TeacherController@index');
+Route::get('/addTeacher','TeacherController@add');
+Route::post('/addTeacherPost','TeacherController@post');
+
 //Роут для комментариев
 Route::post('comment', 'CommentController@store')->name('comment');
 Route::any('commentDelete', 'CommentController@delete');

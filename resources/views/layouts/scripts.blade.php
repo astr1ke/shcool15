@@ -24,6 +24,7 @@
 
 <script src="//ulogin.ru/js/ulogin.js"></script>
 
+<<<<<<< HEAD
 <script>
     $(document).ready(function(){
         $('.bxslider').bxSlider({
@@ -67,6 +68,11 @@
 </script>
 
 
+=======
+<script src="{{asset('modules/carousel')}}/jquery.js"></script>
+<script src="{{asset('modules/carousel')}}/amazingcarousel.js"></script>
+<script src="{{asset('modules/carousel')}}/initcarousel-1.js"></script>
+>>>>>>> 2eb600a
 
 
 
