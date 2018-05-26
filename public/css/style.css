@@ -19,9 +19,12 @@ body {
 	font-weight:300;
 	line-height:1.6em;
 	color:#fff;
-	background-color:#fff;
+	/*background-color:#fff;*/
 	overflow-x:hidden;
+    background-image: url(images/fon.jpg); /* Путь к фоновому изображению */
+
 }
+
 
 hi,h2,h3,h4,h5,h6 {
 	color:#333;
@@ -75,20 +78,20 @@ a:hover {
 }
 
 #breadcrumb {
-	background-color: #1BBD36;
-	margin-top: -20px;
+	background-color: #40c829;
+	margin-top: 10px;
 }
 
 .breadcrumb {
   list-style: none;
-  background-color: #1BBD36;
+  background-color: #40c829;
   border-radius: 0px;
   padding:3px 10px;
 }
 
 .breadcrumb li {
    text-transform:uppercase;
-   margin-top:125px;
+   margin-top:25px;
    font-weight:600;
 }
 
@@ -569,7 +572,7 @@ a:hover {
 }
 
 .lates {
-	padding:50px;
+	padding:10px;
 }
 
 .lates h2 {
@@ -823,7 +826,7 @@ ul.social-network li a {
 /* --- Map --- */
 .map{
 	position:relative;
-	margin-bottom:40px;
+	margin-bottom:-020px;
 }
 
 /* google map */

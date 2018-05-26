@@ -47,15 +47,17 @@
                         <li><a href="/gallery">Фотогалерея</a></li>--></ul></li>
 
                         <li><span>Наши возможности</span><ul>
-                        <li><a href="http://school.wunderpark.ru/360-gradusov-obrazovatel-nogo-pr">Кружки</a></li>
-                        <li><a href="http://school.wunderpark.ru/wundercity">Дополнительные занятия</a></li>
+                        <li><a href="/dopolnitelnie-zaniatia">Дополнительные занятия</a></li>
+                        <li><a href="/stadion">Стадион</a></li>
+                        <li><a href="/krujki">Кружки</a></li>
                         <li><a href="http://school.wunderpark.ru/gamepark">Детская площадка</a></li>
-                        <li><a href="http://school.wunderpark.ru/stadium">Стадион</a></li>
                         <li><a href="http://school.wunderpark.ru/lab">Тепличный комплекс</a></li></ul></li>
 
                         <li><span>Документация</span><ul>
-                        <li><a href="/shcool-documentation">Школьная документация</a></li>
-                        <li><a href="/learner">Для учителей</a></li></ul></li>
+                        <li><a href="/mainInformation">1.Основная Информация</a></li>
+                        <li><a href="/structureOrgansAuthority">2.Структуры огранов власти</a></li>
+                        </ul></li>
+
 
                         <li><a href="/contacts" >Контакты</a></li>			</ol>
                 </div>

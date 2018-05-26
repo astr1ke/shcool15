@@ -1,117 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.layouts')
+@section('content')
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="viewport" content="width=1024">
-    <title>Company-HTML Bootstrap theme</title>
-
-    <link href="{{asset('css/style.css')}}" rel="stylesheet" />
-    <link href="{{asset('css/header_block.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('css')}}/school.css?1517413835" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{asset('css')}}/bootstrap.css" />
-    <link rel="stylesheet" href="{{asset('css')}}/nyroModal.css" media="all">
-    <link rel="stylesheet" href="{{asset('css')}}/jquery.bxslider.css" />
-    <link rel="stylesheet" href="{{asset('css')}}/slider.css" media="all">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{asset('css')}}/footer_block.css" media="all">
-    <link rel="stylesheet" href="{{asset('css')}}/wpModal.css" media="all">
-    <script>/*IE*/if( 1-'\0' ) document.write('<link rel="stylesheet" href="/assets/css/ie.css">');</script>
-
-    <style>
-        .wp-teachers .item-slider-wrapper .item-slider-row .name {height: 48px; overflow: hidden;}
-        /* video banner */
-        .video-banner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        .video-banner__video {
-            width: 100%;
-        }
-        .video-banner__control {
-            position: absolute;
-            left: 80px;
-            display: block;
-            border-radius: 0;
-            border: 2px solid #fff;
-            background: rgba(0,0,0,0.7) url("http://school.wunderpark.ru/assets/uploads/videobanner/volume-mute.svg") 10px center no-repeat;
-            background-size: 35px;
-            color: #fff;
-            padding: 15px 10px 15px 60px;
-            font-size: 20px;
-            z-index: 1;
-            opacity: 0;
-            -webkit-transition: opacity 0.4s;
-            transition: opacity 0.4s;
-        }
-        .video-banner__control.on {
-            background-image: url("http://school.wunderpark.ru/assets/uploads/videobanner/volume-medium.svg");
-        }
-        .video-banner:hover .video-banner__control {
-            opacity: 1;
-        }
-
-        @media (min-width: 1541px) and (max-width: 1705px) {
-            .video-banner__control {
-                top: 360px;
-            }
-        }
-        @media (min-width: 1330px) and (max-width: 1540px) {
-            .video-banner__control {
-                top: 310px;
-            }
-        }
-        @media (min-width: 300px) and (max-width: 1330px) {
-            .video-banner__control {
-                top: 230px;
-            }
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-@include('layouts.header')
-
-<!-- slider -->
-<div class="container-fluid">
-    <div id="slider" class="row">
-        <ul class="bxslider">
-            <li>
-                <img src="images/main.jpg"/>
-            </li>
-        </ul>
+    <!-- Главная картинка -->
+    <div class="container-fluid">
+        <div id="slider" class="row">
+            <ul class="bxslider">
+                <li>
+                    <img src="images/main.jpg"/>
+                </li>
+            </ul>
+        </div>
     </div>
 <!--Последние новости-->
+
+
     <div class="lates">
         <div class="container">
             <div class="text-center">
                 <h2>Последние новости</h2>
             </div>
-            @foreach($articles as $article)
+            @foreach($articles1 as $article)
                 <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <?
                 $txt=$article->text;
                 $txt=preg_replace ('/<img.*>/Uis', '', $txt);
                 $txt=preg_replace ('/<img[^>]*?src=\"(.*)\"/iU', '', $txt);
                 $txt=strip_tags($txt, '<br>');
-                $txt=mb_strimwidth($txt,0,300,'...');
+                $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
                     <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
                         <h3>{{$article['articleName']}}</h3></a>
-                        <p>{!!$txt!!}</p>
+                    <p>{!!$txt!!}</p>
                 </div>
             @endforeach
         </div>
     </div>
 
+    <div class="lates">
+        <div class="container">
+            @foreach($articles2 as $article)
+                <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <?
+                $txt=$article->text;
+                $txt=preg_replace ('/<img.*>/Uis', '', $txt);
+                $txt=preg_replace ('/<img[^>]*?src=\"(.*)\"/iU', '', $txt);
+                $txt=strip_tags($txt, '<br>');
+                $txt=mb_strimwidth($txt,0,100,'...');
+                ?> <!---  обрезаем колво символов для превью статей на главной --->
+                    <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
+                        <h3>{{$article['articleName']}}</h3></a>
+                    <p>{!!$txt!!}</p>
+                </div>
+            @endforeach
+        </div>
+    </div>
 
-    <!-- О нас -->
+<!--О нас-->
 
 <div class="about">
     <div class="container">
@@ -194,4 +138,17 @@
     <!--/.container-->
 </section>
 <!--/#partner-->
+
+    <div class="map" >
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13454.82394930258!2d41.33412416619353!3d44.
+        85153861224272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x91834f94af1f3938!2z0KjQutC-0LvQsCAxNQ!
+        5e0!3m2!1sru!2sru!4v1527362221131" width="800" height="600" frameborder="0" style="border:0position:relative;
+        height: 600px;width: 100%;margin-top: 10px" allowfullscreen></iframe>
+
+
+    </div>
+
+
 @stop
+

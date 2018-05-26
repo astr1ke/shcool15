@@ -27,6 +27,19 @@ Route::get('contacts',function (){
 Route::get('learner', function (){
      return view('learner');
 });
+Route::get('mainInformation', function (){
+    return view('mainInformation');
+});
+Route::get('structureOrgansAuthority', function (){
+    return view('structureOrgansAuthority');
+});
+Route::get('dopolnitelnie-zaniatia', function (){
+    return view('dopolnitelnieZaniatia');
+});
+Route::get('stadion', function (){
+    return view('stadion');
+});
+
 
 
 /* роуты для статей*/
