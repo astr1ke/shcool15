@@ -27,6 +27,7 @@
 <script src="{{asset('modules/carousel')}}/jquery.js"></script>
 <script src="{{asset('modules/carousel')}}/amazingcarousel.js"></script>
 <script src="{{asset('modules/carousel')}}/initcarousel-1.js"></script>
+<script src="{{asset('modules/carouselArt')}}/initcarousel-2.js"></script>
 
 
 

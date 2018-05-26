@@ -1,15 +1,21 @@
 @extends('layouts.layouts');
 @section('content');
 
-<div class="container">
-    <div class="row">
-        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" class="first" itemprop="item"><span itemprop="name">Главная</span><meta itemprop="position" content="1"></a></li>
-            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/teachers" itemprop="item"><span itemprop="name">Наши педагоги</span><meta itemprop="position" content="2"></a></li>
+
+<div id="breadcrumb">
+    <div class="container">
+        <div class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            <li>Наши педагоги</li>
             @if($isAdmin==1)
                 <li><a href="/addTeacher">Добавить нового учителя</a></li>
             @endif
-        </ol>	</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
     <div class="wp-content row">
         <div class="col-md-12"><h1>
                 Наши педагоги</h1>

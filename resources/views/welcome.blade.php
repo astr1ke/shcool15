@@ -1,7 +1,7 @@
 @extends('layouts.layouts')
 @section('content')
 
-    <!-- slider -->
+    <!-- Главная картинка -->
     <div class="container-fluid">
         <div id="slider" class="row">
             <ul class="bxslider">
@@ -12,27 +12,50 @@
         </div>
     </div>
 <!--Последние новости-->
+
+
     <div class="lates">
         <div class="container">
             <div class="text-center">
                 <h2>Последние новости</h2>
             </div>
-            @foreach($articles as $article)
+            @foreach($articles1 as $article)
                 <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <?
                 $txt=$article->text;
                 $txt=preg_replace ('/<img.*>/Uis', '', $txt);
                 $txt=preg_replace ('/<img[^>]*?src=\"(.*)\"/iU', '', $txt);
                 $txt=strip_tags($txt, '<br>');
-                $txt=mb_strimwidth($txt,0,300,'...');
+                $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
                     <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
                         <h3>{{$article['articleName']}}</h3></a>
-                        <p>{!!$txt!!}</p>
+                    <p>{!!$txt!!}</p>
                 </div>
             @endforeach
         </div>
     </div>
+
+    <div class="lates">
+        <div class="container">
+            @foreach($articles2 as $article)
+                <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <?
+                $txt=$article->text;
+                $txt=preg_replace ('/<img.*>/Uis', '', $txt);
+                $txt=preg_replace ('/<img[^>]*?src=\"(.*)\"/iU', '', $txt);
+                $txt=strip_tags($txt, '<br>');
+                $txt=mb_strimwidth($txt,0,100,'...');
+                ?> <!---  обрезаем колво символов для превью статей на главной --->
+                    <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
+                        <h3>{{$article['articleName']}}</h3></a>
+                    <p>{!!$txt!!}</p>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+<!--О нас-->
 
 <div class="about">
     <div class="container">
@@ -115,6 +138,15 @@
     <!--/.container-->
 </section>
 <!--/#partner-->
+    <div class="map" >
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13454.82394930258!2d41.33412416619353!3d44.
+        85153861224272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x91834f94af1f3938!2z0KjQutC-0LvQsCAxNQ!
+        5e0!3m2!1sru!2sru!4v1527362221131" width="800" height="600" frameborder="0" style="border:0position:relative;
+        height: 600px;width: 100%;margin-top: 10px" allowfullscreen></iframe>
+
+
+    </div>
 
 
 @stop

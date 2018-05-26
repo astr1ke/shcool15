@@ -9,8 +9,9 @@ class WelcomeController extends Controller
 {
     public function index(){
         $a= article::latest()->get();//получили модель статей из базы, перевели в массив
-        $articles = $a->slice(1,3); //поменяли порядок и взяли первые(последние) новости
-        return view('welcome', ['articles'=>$articles]);
+        $articles1 = $a->slice(1,3); //поменяли порядок и взяли первые(последние) новости
+        $articles2 = $a->slice(4,3);
+        return view('welcome', ['articles1'=>$articles1,'articles2'=>$articles2]);
 
     }
 }

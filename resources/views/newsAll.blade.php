@@ -9,7 +9,7 @@
     <title>Коноковская Школа №15</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
-    @include('layouts.stiles')
+   @include('layouts.stiles')
 
 <!--Выбираем цвет фона сообщений и отступы поля-->
     <style type="text/css">
@@ -29,21 +29,18 @@
 @include('layouts.header')
 <body>
 
-
-<div class="container">
-    <div class="row">
-        <ol class="breadcrumb" itemscope itemtype="">
-            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" class="first" itemprop="item"><span itemprop="name">Главная</span><meta itemprop="position" content="1"></a></li>
-            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item"><span itemprop="name">События</span><meta itemprop="position" content="2"></a></li>
+<div id="breadcrumb">
+    <div class="container">
+        <div class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            <li>Жизнь школы</li>
             <? if(isset($c)){
                 echo("- $c");
             }?>
-
-            </li>
             @if($isAdmin==1)
                 <li><a href="/articles">Добавить статью</a></li>
             @endif
-        </ol>
+        </div>
     </div>
 </div>
 

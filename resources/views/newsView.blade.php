@@ -30,17 +30,18 @@
 
     @include('layouts.header')
 
-    <div class="container">
-        <div class="row">
-            <ol class="breadcrumb" itemscope itemtype="">
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" class="first" itemprop="item"><span itemprop="name">Главная</span><meta itemprop="position" content="1"></a></li>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item"><span itemprop="name">События</span><meta itemprop="position" content="2"></a></li>
+    <div id="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb">
+                <li><a href="/">Главная</a></li>
                 @foreach($news as $newS)
+                    <li>Жизнь школы</li>
                     <label><a>{{' / '.$newS['articleName']}}</a></label>
                 @endforeach
-            </ol>
+            </div>
         </div>
     </div>
+
 
     <section id="blog" class="container">
         <div class="blog">
