@@ -4,7 +4,6 @@
     <div id="breadcrumb">
         <div class="container">
             <div class="breadcrumb">
-                <li><a href="/">Главная</a></li>
                 <li>Контакты</li>
             </div>
         </div>

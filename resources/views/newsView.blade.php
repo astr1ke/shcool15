@@ -33,7 +33,6 @@
     <div id="breadcrumb">
         <div class="container">
             <div class="breadcrumb">
-                <li><a href="/">Главная</a></li>
                 @foreach($news as $newS)
                     <li>Жизнь школы</li>
                     <label><a>{{' / '.$newS['articleName']}}</a></label>

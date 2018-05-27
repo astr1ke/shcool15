@@ -32,7 +32,6 @@
 <div id="breadcrumb">
     <div class="container">
         <div class="breadcrumb">
-            <li><a href="/">Главная</a></li>
             <li>Жизнь школы</li>
             <? if(isset($c)){
                 echo("- $c");

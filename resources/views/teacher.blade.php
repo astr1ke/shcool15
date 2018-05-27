@@ -2,11 +2,10 @@
 @section('content');
 
 
-<div id="breadcrumb">
+<div id="breadcrumb" style="margin-top: -15px">
     <div class="container">
         <div class="breadcrumb">
-            <li><a href="/">Главная</a></li>
-            <li>Наши педагоги</li>
+            <li>Педагоги</li>
             @if($isAdmin==1)
                 <li><a href="/addTeacher">Добавить нового учителя</a></li>
             @endif
@@ -15,10 +14,11 @@
 </div>
 
 
+<br/>
 <div class="container">
     <div class="wp-content row">
-        <div class="col-md-12"><h1>
-                Наши педагоги</h1>
+        <div class="col-md-12">
+            <h1>Наша команда</h1>
         </div>
 
         @foreach($teachers as $teacher)
@@ -41,11 +41,6 @@
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <hr>
-    </div>
-</div>
 
 
 

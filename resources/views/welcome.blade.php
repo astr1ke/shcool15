@@ -90,13 +90,12 @@
     <div id="amazingcarousel-1" style="display:none;position:relative;width:100%;max-width:1040px;margin:0px auto 0px;">
         <div class="amazingcarousel-list-container">
             <ul class="amazingcarousel-list">
-
                 <?
                 $teachers = \App\teacher::all();
                 ?>
                 @foreach($teachers as $teacher)
                 <li class="amazingcarousel-item">
-                    <div class="col-md-31 col-xs-61">
+                    <div class="col-md-31 col-xs-61" style="text-align: center">
                         <a href="/teachers">
                             <span class="img-border-circle"><img src="{{$teacher->foto}}"/></span>
                             <div class="section-title-2 name">{{$teacher->FIO}}</div>
@@ -105,9 +104,6 @@
                     </div>
                 </li>
                 @endforeach
-
-
-
             </ul>
             <div class="amazingcarousel-prev"></div>
             <div class="amazingcarousel-next"></div>
@@ -135,9 +131,10 @@
             </ul>
         </div>
     </div>
-    <!--/.container-->
 </section>
-<!--/#partner-->
+
+
+<!--Связь с нами-->
     <section id="conatcat-info">
         <div class="container">
             <div class="row">
